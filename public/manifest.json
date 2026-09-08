@@ -1,0 +1,16 @@
+{
+  "name": "AI Scan",
+  "short_name": "AI Scan",
+  "description": "Scan a boba tea order label",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#aa3bff",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    }
+  ]
+}
