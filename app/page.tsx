@@ -28,9 +28,9 @@ export default function App() {
   function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0]
     if (!file) return
-    const reader = new FileReader()
-    reader.onload = () => setState({ step: 'preview', dataUrl: reader.result as string })
-    reader.readAsDataURL(file)
+    compressImage(file, 1024, 0.7).then((dataUrl) =>
+      setState({ step: 'preview', dataUrl })
+    )
   }
 
   async function handleScan() {
@@ -192,4 +192,19 @@ function ModRow({ label, value }: { label: string; value: string }) {
       <span className="mod-value">{value}</span>
     </div>
   )
+}
+
+function compressImage(file: File, maxDim: number, quality: number): Promise<string> {
+  return new Promise((resolve) => {
+    const img = new Image()
+    img.onload = () => {
+      const canvas = document.createElement('canvas')
+      const scale = Math.min(1, maxDim / Math.max(img.width, img.height))
+      canvas.width = img.width * scale
+      canvas.height = img.height * scale
+      canvas.getContext('2d')!.drawImage(img, 0, 0, canvas.width, canvas.height)
+      resolve(canvas.toDataURL('image/jpeg', quality))
+    }
+    img.src = URL.createObjectURL(file)
+  })
 }
