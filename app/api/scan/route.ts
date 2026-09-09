@@ -74,7 +74,10 @@ Missing category → null (or [] for topping).`,
   })
 
   if (!response.ok) {
-    return NextResponse.json(await response.json(), { status: response.status })
+    const errText = await response.text().catch(() => '')
+    let errBody
+    try { errBody = JSON.parse(errText) } catch { errBody = { error: errText || `API error ${response.status}` } }
+    return NextResponse.json(errBody, { status: response.status })
   }
 
   const data = await response.json()
