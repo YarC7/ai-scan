@@ -7,7 +7,6 @@ import { loadHistory, saveToHistory, clearHistory, exportCSV, exportPDF } from '
 
 type State =
   | { step: 'idle' }
-  | { step: 'preview'; dataUrl: string }
   | { step: 'loading'; dataUrl: string }
   | { step: 'result'; dataUrl: string; result: OrderLabel }
   | { step: 'error'; dataUrl: string | null; error: string }
@@ -28,23 +27,18 @@ export default function App() {
   function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0]
     if (!file) return
-    compressImage(file, 1024, 0.7).then((dataUrl) =>
-      setState({ step: 'preview', dataUrl })
-    )
-  }
-
-  async function handleScan() {
-    if (state.step !== 'preview') return
-    setState({ step: 'loading', dataUrl: state.dataUrl })
-    try {
-      const result = await scanLabel(state.dataUrl)
-      const updated = saveToHistory(result)
-      setHistory(updated)
-      setState({ step: 'result', dataUrl: state.dataUrl, result })
-    } catch (err) {
-      const msg = err instanceof Error ? err.message : 'Unknown error'
-      setState({ step: 'error', dataUrl: state.dataUrl, error: msg })
-    }
+    compressImage(file, 1024, 0.7).then(async (dataUrl) => {
+      setState({ step: 'loading', dataUrl })
+      try {
+        const result = await scanLabel(dataUrl)
+        const updated = saveToHistory(result)
+        setHistory(updated)
+        setState({ step: 'result', dataUrl, result })
+      } catch (err) {
+        const msg = err instanceof Error ? err.message : 'Unknown error'
+        setState({ step: 'error', dataUrl, error: msg })
+      }
+    })
   }
 
   function handleReset() {
@@ -72,24 +66,31 @@ export default function App() {
         className="file-input"
         id="camera"
       />
+      <input
+        type="file"
+        accept="image/*"
+        onChange={handleFileChange}
+        className="file-input"
+        id="upload"
+      />
 
       {state.step === 'idle' && (
-        <label htmlFor="camera" className="scan-btn">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
-            <circle cx="12" cy="13" r="4"/>
-          </svg>
-          Open Camera
-        </label>
-      )}
-
-      {state.step === 'preview' && (
-        <div className="preview">
-          <img src={state.dataUrl} alt="Captured label" />
-          <div className="actions">
-            <button className="scan-btn" onClick={handleScan}>Extract</button>
-            <button className="reset-btn" onClick={handleReset}>Retake</button>
-          </div>
+        <div className="actions">
+          <label htmlFor="camera" className="scan-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+              <circle cx="12" cy="13" r="4"/>
+            </svg>
+            Open Camera
+          </label>
+          <label htmlFor="upload" className="scan-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="17 8 12 3 7 8"/>
+              <line x1="12" y1="3" x2="12" y2="15"/>
+            </svg>
+            Upload Image
+          </label>
         </div>
       )}
 
@@ -116,7 +117,17 @@ export default function App() {
           {state.dataUrl && <img src={state.dataUrl} alt="Captured label" className="error-img" />}
           <p className="error-msg">{state.error}</p>
           <div className="actions">
-            {state.dataUrl && <button className="scan-btn" onClick={handleScan}>Retry</button>}
+            {state.dataUrl && <button className="scan-btn" onClick={() => {
+              const url = state.dataUrl!
+              setState({ step: 'loading', dataUrl: url })
+              scanLabel(url).then((result) => {
+                const updated = saveToHistory(result)
+                setHistory(updated)
+                setState({ step: 'result', dataUrl: url, result })
+              }).catch((err) => {
+                setState({ step: 'error', dataUrl: url, error: err instanceof Error ? err.message : 'Unknown error' })
+              })
+            }}>Retry</button>}
             <button className="reset-btn" onClick={handleReset}>Start Over</button>
           </div>
         </div>
