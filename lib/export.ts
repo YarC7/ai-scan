@@ -35,16 +35,14 @@ function flattenRow(item: OrderLabel) {
     sweet: item.modifiers.sweet ?? '',
     ice: item.modifiers.ice ?? '',
     tea_flavor: item.modifiers.tea_flavor ?? '',
-    confidence: item.confidence,
-    notes: item.notes ?? '',
   }
 }
 
 export function exportCSV(items: OrderLabel[]) {
-  const headers = ['Order ID', 'Page', 'Customer', 'Drink', 'Topping', 'Sweet', 'Ice', 'Tea Flavor', 'Confidence', 'Notes']
+  const headers = ['Order ID', 'Page', 'Customer', 'Drink', 'Topping', 'Sweet', 'Ice', 'Tea Flavor']
   const rows = items.map(item => {
     const r = flattenRow(item)
-    return [r.order_id, r.page, r.customer_name, r.drink_name, r.topping, r.sweet, r.ice, r.tea_flavor, r.confidence, r.notes]
+    return [r.order_id, r.page, r.customer_name, r.drink_name, r.topping, r.sweet, r.ice, r.tea_flavor]
   })
 
   const csv = [headers, ...rows]
@@ -87,8 +85,6 @@ export function exportPDF(items: OrderLabel[]) {
       r.sweet ? `Sweet: ${r.sweet}` : '',
       r.ice ? `Ice: ${r.ice}` : '',
       r.tea_flavor ? `Flavor: ${r.tea_flavor}` : '',
-      `Confidence: ${r.confidence}`,
-      r.notes ? `Notes: ${r.notes}` : '',
     ].filter(Boolean)
 
     details.forEach(d => {

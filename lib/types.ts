@@ -17,6 +17,4 @@ export interface OrderLabel {
   drink_name: string
   modifiers: Modifiers
   unrecognized_text: string[]
-  confidence: 'high' | 'medium' | 'low'
-  notes: string | null
 }

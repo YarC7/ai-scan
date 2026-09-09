@@ -46,7 +46,7 @@ KNOWN MODIFIER CATEGORIES AND VALID VALUES (ground truth — use this to classif
 
 IMPORTANT: there is no separate "Milk Base" or "Tea Base" modifier — that information is already part of the drink_name itself (e.g. "Black Milk Tea", "Green Tea"). Do not invent a milk_base or tea_base field.
 
-A term never appears in more than one category above — if you read something that isn't an exact or near-exact match to one of these lists, treat it as a likely OCR/print error and correct to the closest valid value, noting the correction in "notes".
+A term never appears in more than one category above — if you read something that isn't an exact or near-exact match to one of these lists, correct it to the closest valid value.
 
 OUTPUT FORMAT — return ONLY valid JSON, no markdown fences, no commentary:
 
@@ -61,9 +61,7 @@ OUTPUT FORMAT — return ONLY valid JSON, no markdown fences, no commentary:
     "ice": string | null,
     "tea_flavor": string | null
   },
-  "unrecognized_text": [string],
-  "confidence": "high" | "medium" | "low",
-  "notes": string | null
+  "unrecognized_text": [string]
 }
 
 Missing category → null (or [] for topping).`,

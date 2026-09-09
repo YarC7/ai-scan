@@ -32,8 +32,6 @@ export interface ExtractedLabel {
     tea_flavor: string | null;
   };
   unrecognized_text: string[];
-  confidence: 'high' | 'medium' | 'low';
-  notes: string | null;
 }
 
 export interface ValidationResult {

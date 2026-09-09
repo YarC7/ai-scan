@@ -156,7 +156,6 @@ export default function App() {
                     {item.customer_name && <span className="history-customer">{item.customer_name}</span>}
                     {item.order_id && <span className="history-order">{item.order_id}</span>}
                   </div>
-                  <span className={`history-conf history-conf-${item.confidence}`}>{item.confidence}</span>
                 </div>
               ))}
             </div>
@@ -168,12 +167,9 @@ export default function App() {
 }
 
 function ResultCard({ result, showRaw, onToggleRaw }: { result: OrderLabel; showRaw: boolean; onToggleRaw: () => void }) {
-  const confidenceColor = { high: '#16a34a', medium: '#ca8a04', low: '#dc2626' }[result.confidence]
-
   return (
     <div className="result-card">
       <div className="result-header">
-        <span className="confidence" style={{ color: confidenceColor }}>● {result.confidence}</span>
         {result.order_id && <span className="order-id">{result.order_id}</span>}
         {result.page && <span className="page">{result.page}</span>}
       </div>
@@ -187,7 +183,6 @@ function ResultCard({ result, showRaw, onToggleRaw }: { result: OrderLabel; show
         {result.modifiers?.ice && <ModRow label="Ice" value={result.modifiers.ice} />}
         {result.modifiers?.tea_flavor && <ModRow label="Flavor" value={result.modifiers.tea_flavor} />}
       </div>
-      {result.notes && <p className="notes">📝 {result.notes}</p>}
       {result.unrecognized_text?.length > 0 && <p className="unrecognized">Unrecognized: {result.unrecognized_text.join(', ')}</p>}
       <button className="raw-toggle" onClick={onToggleRaw}>{showRaw ? 'Hide' : 'Show'} Raw JSON</button>
       {showRaw && <pre className="raw-json">{JSON.stringify(result, null, 2)}</pre>}
