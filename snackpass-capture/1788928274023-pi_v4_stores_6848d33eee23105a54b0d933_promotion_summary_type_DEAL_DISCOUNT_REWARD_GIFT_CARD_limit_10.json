@@ -1,0 +1,635 @@
+{
+  "promotionSummary": [
+    "1 free taiyaki every 299 points",
+    "1 free topping every 750 points",
+    "Free waffle or mochi every 6000 points",
+    "Free slushy every 7000 points",
+    "Free milk tea or black/green tea every 8000 points",
+    "Free creme brulee, matcha, smoothie, or fruit tea every 9000 points",
+    "Free magical or butterfly tea every 10000 points"
+  ],
+  "details": {
+    "previewPromotions": [
+      {
+        "_id": "694c37d800b753a1ffff3182",
+        "conditions": {
+          "_id": "69d817b14cb7c955346ac734"
+        },
+        "rewardExpiration": {
+          "seconds": 86400,
+          "_id": "69d817b14cb7c955346ac735"
+        },
+        "name": "1 Free Taiyaki",
+        "marketingName": "1 Free Taiyaki",
+        "nameForStore": "1 Free Taiyaki",
+        "isRunning": true,
+        "targets": [],
+        "store": {
+          "_id": "6848d33eee23105a54b0d933",
+          "name": "TeaZenTea (Brentwood, 1135 2nd St)",
+          "emoji": "🧋",
+          "color": "#47d75f"
+        },
+        "geolocation": {
+          "type": "Point",
+          "coordinates": [
+            -121.6981245,
+            37.9368993
+          ]
+        },
+        "activeTimePeriod": null,
+        "showActiveTimePeriodCountdown": false,
+        "hours": null,
+        "multiuse": true,
+        "maximumUses": null,
+        "isEmployeeMode": false,
+        "nonCombinable": false,
+        "storewide": false,
+        "productIds": [
+          "694c115236f0d678c86abfc5"
+        ],
+        "categories": [],
+        "pointsRequired": 299,
+        "invitesRequired": 0,
+        "discount": {
+          "dollarsOff": 2.99
+        },
+        "storeCredit": null,
+        "type": "REWARD",
+        "totalUses": 353,
+        "newCustomerPurchases": 213,
+        "totalPurchases": 270,
+        "tabletShowsPromotionDiscount": true,
+        "promotionCreator": "store",
+        "accounting": {
+          "totalAmountSpent": {
+            "store": 284.0500000000001,
+            "snackpass": 0
+          },
+          "voidCommissionOnPurchase": false,
+          "commissionVoidItem": false,
+          "contributionPolicies": [
+            {
+              "snackpassSubsidizationPercent": null,
+              "snackpassSubsidizationDollars": null,
+              "commissionVoid": false,
+              "voidCommissionOnSnackpassSubsidy": false,
+              "conditions": {
+                "redemptions": null,
+                "dollarsDiscounted": null,
+                "dates": null
+              },
+              "_id": "69d817b14cb7c955346ac736"
+            }
+          ]
+        },
+        "applyTaxToSnackpassContribution": false,
+        "shouldDiscountAddons": false,
+        "isKioskEligible": false,
+        "isArchived": false,
+        "lastUsedAt": "2026-09-08T22:52:58.426Z",
+        "lastPurchaseAt": "2026-09-08T22:52:59.262Z",
+        "imageUrl": null,
+        "isLeadPromotion": false,
+        "firstPromotionUses": 59,
+        "autoApply": false,
+        "zeroBagFee": false,
+        "createdAt": "2025-12-24T18:58:32.891Z",
+        "updatedAt": "2026-09-08T22:52:59.261Z",
+        "__v": 2
+      },
+      {
+        "_id": "68937b77e7399845c10895e8",
+        "conditions": {
+          "_id": "6a67d4247e3621928027d92a"
+        },
+        "rewardExpiration": null,
+        "name": "1 Free Topping",
+        "marketingName": "1 Free Topping",
+        "nameForStore": "1 Free Topping",
+        "isRunning": true,
+        "targets": [],
+        "store": {
+          "_id": "6848d33eee23105a54b0d933",
+          "name": "TeaZenTea (Brentwood, 1135 2nd St)",
+          "emoji": "🧋",
+          "color": "#47d75f"
+        },
+        "geolocation": {
+          "type": "Point",
+          "coordinates": [
+            -121.6981245,
+            37.9368993
+          ]
+        },
+        "activeTimePeriod": null,
+        "showActiveTimePeriodCountdown": false,
+        "hours": null,
+        "multiuse": true,
+        "maximumUses": null,
+        "isEmployeeMode": false,
+        "nonCombinable": false,
+        "storewide": false,
+        "productIds": [],
+        "categories": [
+          "685c09634d0b9365db8ada48",
+          "685c09634d0b9365db8adab8",
+          "685c09634d0b9365db8ada47",
+          "685c09634d0b9365db8ada98",
+          "685c09634d0b9365db8adab7",
+          "685c09634d0b9365db8ada95",
+          "685c09634d0b9365db8ada49",
+          "685c09644d0b9365db8adace",
+          "685c09634d0b9365db8ada70",
+          "685c09634d0b9365db8ada63",
+          "685c09634d0b9365db8adab4",
+          "6a2cd5fc89b84fb1bebf5415",
+          "698fdb7d1f4a92962873e685",
+          "6934767f0ddf670c52daa1a2",
+          "6897a25379db9a8bfb09a873",
+          "68edb6516a691f714b7daffc"
+        ],
+        "pointsRequired": 750,
+        "invitesRequired": 0,
+        "discount": {
+          "dollarsOff": 0.75
+        },
+        "storeCredit": null,
+        "type": "REWARD",
+        "totalUses": 9537,
+        "newCustomerPurchases": 9177,
+        "totalPurchases": 9473,
+        "tabletShowsPromotionDiscount": true,
+        "promotionCreator": "store",
+        "accounting": {
+          "totalAmountSpent": {
+            "store": 13.5,
+            "snackpass": 0
+          },
+          "voidCommissionOnPurchase": false,
+          "commissionVoidItem": false,
+          "contributionPolicies": [
+            {
+              "snackpassSubsidizationPercent": null,
+              "snackpassSubsidizationDollars": null,
+              "commissionVoid": false,
+              "voidCommissionOnSnackpassSubsidy": false,
+              "conditions": {
+                "redemptions": null,
+                "dollarsDiscounted": null,
+                "dates": null
+              },
+              "_id": "6a67d4247e3621928027d92b"
+            }
+          ]
+        },
+        "applyTaxToSnackpassContribution": false,
+        "shouldDiscountAddons": false,
+        "isKioskEligible": false,
+        "isArchived": false,
+        "lastUsedAt": "2026-09-09T03:03:16.401Z",
+        "lastPurchaseAt": "2026-09-09T03:03:17.072Z",
+        "imageUrl": null,
+        "isLeadPromotion": false,
+        "firstPromotionUses": 2803,
+        "autoApply": false,
+        "zeroBagFee": false,
+        "createdAt": "2025-08-06T15:57:43.976Z",
+        "updatedAt": "2026-09-09T03:03:17.071Z",
+        "__v": 4
+      },
+      {
+        "_id": "68937be3ab579465360abdf4",
+        "conditions": {
+          "_id": "68eb12d76094626a420f1212"
+        },
+        "rewardExpiration": null,
+        "name": "Free Waffle or Mochi",
+        "marketingName": "Free Waffle or Mochi",
+        "nameForStore": "Free Waffle or Mochi",
+        "isRunning": true,
+        "targets": [],
+        "store": {
+          "_id": "6848d33eee23105a54b0d933",
+          "name": "TeaZenTea (Brentwood, 1135 2nd St)",
+          "emoji": "🧋",
+          "color": "#47d75f"
+        },
+        "geolocation": {
+          "type": "Point",
+          "coordinates": [
+            -121.6981245,
+            37.9368993
+          ]
+        },
+        "activeTimePeriod": null,
+        "showActiveTimePeriodCountdown": false,
+        "hours": null,
+        "multiuse": true,
+        "maximumUses": null,
+        "isEmployeeMode": false,
+        "nonCombinable": false,
+        "storewide": false,
+        "productIds": [
+          "685c09634d0b9365db8ad991",
+          "685c09634d0b9365db8ad9c8",
+          "685c53f6105ce6eec8335440"
+        ],
+        "categories": [],
+        "pointsRequired": 6000,
+        "invitesRequired": 0,
+        "discount": {
+          "percentOff": 100
+        },
+        "storeCredit": null,
+        "type": "REWARD",
+        "totalUses": 434,
+        "newCustomerPurchases": 406,
+        "totalPurchases": 425,
+        "tabletShowsPromotionDiscount": true,
+        "promotionCreator": "store",
+        "accounting": {
+          "totalAmountSpent": {
+            "store": 45,
+            "snackpass": 0
+          },
+          "voidCommissionOnPurchase": false,
+          "commissionVoidItem": false,
+          "contributionPolicies": [
+            {
+              "snackpassSubsidizationPercent": null,
+              "snackpassSubsidizationDollars": null,
+              "commissionVoid": false,
+              "voidCommissionOnSnackpassSubsidy": false,
+              "conditions": {
+                "redemptions": null,
+                "dollarsDiscounted": null,
+                "dates": null
+              },
+              "_id": "68eb12d76094626a420f1213"
+            }
+          ]
+        },
+        "applyTaxToSnackpassContribution": false,
+        "shouldDiscountAddons": false,
+        "isKioskEligible": false,
+        "isArchived": false,
+        "lastUsedAt": "2026-09-06T02:28:55.780Z",
+        "lastPurchaseAt": "2026-09-06T02:28:56.775Z",
+        "imageUrl": null,
+        "isLeadPromotion": false,
+        "firstPromotionUses": 165,
+        "autoApply": false,
+        "zeroBagFee": false,
+        "createdAt": "2025-08-06T15:59:31.661Z",
+        "updatedAt": "2026-09-06T02:28:56.774Z",
+        "__v": 1
+      },
+      {
+        "_id": "68937bfd21d7db69735f3161",
+        "conditions": {
+          "_id": "68937bfd21d7db69735f3162"
+        },
+        "rewardExpiration": null,
+        "name": "Free Slushy",
+        "marketingName": "Free Slushy",
+        "nameForStore": "Free Slushy",
+        "isRunning": true,
+        "targets": [],
+        "store": {
+          "_id": "6848d33eee23105a54b0d933",
+          "name": "TeaZenTea (Brentwood, 1135 2nd St)",
+          "emoji": "🧋",
+          "color": "#47d75f"
+        },
+        "geolocation": {
+          "type": "Point",
+          "coordinates": [
+            -121.6981245,
+            37.9368993
+          ]
+        },
+        "activeTimePeriod": null,
+        "showActiveTimePeriodCountdown": false,
+        "hours": null,
+        "multiuse": true,
+        "maximumUses": null,
+        "isEmployeeMode": false,
+        "nonCombinable": false,
+        "storewide": false,
+        "productIds": [],
+        "categories": [
+          "685c09634d0b9365db8ada70"
+        ],
+        "pointsRequired": 7000,
+        "invitesRequired": 0,
+        "discount": {
+          "percentOff": 100
+        },
+        "storeCredit": null,
+        "type": "REWARD",
+        "totalUses": 278,
+        "newCustomerPurchases": 267,
+        "totalPurchases": 276,
+        "tabletShowsPromotionDiscount": true,
+        "promotionCreator": "store",
+        "accounting": {
+          "totalAmountSpent": {
+            "store": 19.96,
+            "snackpass": 0
+          },
+          "voidCommissionOnPurchase": false,
+          "commissionVoidItem": false,
+          "contributionPolicies": [
+            {
+              "snackpassSubsidizationPercent": null,
+              "snackpassSubsidizationDollars": null,
+              "commissionVoid": false,
+              "voidCommissionOnSnackpassSubsidy": false,
+              "conditions": {
+                "redemptions": null,
+                "dollarsDiscounted": null,
+                "dates": null
+              },
+              "_id": "68937bfd21d7db69735f3163"
+            }
+          ]
+        },
+        "applyTaxToSnackpassContribution": false,
+        "shouldDiscountAddons": false,
+        "isKioskEligible": false,
+        "isArchived": false,
+        "lastUsedAt": "2026-09-08T23:04:02.119Z",
+        "lastPurchaseAt": "2026-09-08T23:04:02.609Z",
+        "imageUrl": null,
+        "isLeadPromotion": false,
+        "firstPromotionUses": 111,
+        "autoApply": false,
+        "zeroBagFee": false,
+        "createdAt": "2025-08-06T15:59:57.552Z",
+        "updatedAt": "2026-09-08T23:04:02.608Z",
+        "__v": 0
+      },
+      {
+        "_id": "68937c18e3d851292569c836",
+        "conditions": {
+          "_id": "68eb11a5759656786ef7bf64"
+        },
+        "rewardExpiration": null,
+        "name": "Free Milk Tea or black/Green Tea",
+        "marketingName": "Free Milk Tea or black/Green Tea",
+        "nameForStore": "Free Milk Tea or black/Green Tea",
+        "isRunning": true,
+        "targets": [],
+        "store": {
+          "_id": "6848d33eee23105a54b0d933",
+          "name": "TeaZenTea (Brentwood, 1135 2nd St)",
+          "emoji": "🧋",
+          "color": "#47d75f"
+        },
+        "geolocation": {
+          "type": "Point",
+          "coordinates": [
+            -121.6981245,
+            37.9368993
+          ]
+        },
+        "activeTimePeriod": null,
+        "showActiveTimePeriodCountdown": false,
+        "hours": null,
+        "multiuse": true,
+        "maximumUses": null,
+        "isEmployeeMode": false,
+        "nonCombinable": false,
+        "storewide": false,
+        "productIds": [],
+        "categories": [
+          "685c09634d0b9365db8ada49",
+          "685c09644d0b9365db8adace"
+        ],
+        "pointsRequired": 8000,
+        "invitesRequired": 0,
+        "discount": {
+          "percentOff": 100
+        },
+        "storeCredit": null,
+        "type": "REWARD",
+        "totalUses": 613,
+        "newCustomerPurchases": 591,
+        "totalPurchases": 610,
+        "tabletShowsPromotionDiscount": true,
+        "promotionCreator": "store",
+        "accounting": {
+          "totalAmountSpent": {
+            "store": 31.980000000000004,
+            "snackpass": 0
+          },
+          "voidCommissionOnPurchase": false,
+          "commissionVoidItem": false,
+          "contributionPolicies": [
+            {
+              "snackpassSubsidizationPercent": null,
+              "snackpassSubsidizationDollars": null,
+              "commissionVoid": false,
+              "voidCommissionOnSnackpassSubsidy": false,
+              "conditions": {
+                "redemptions": null,
+                "dollarsDiscounted": null,
+                "dates": null
+              },
+              "_id": "68eb11a5759656786ef7bf65"
+            }
+          ]
+        },
+        "applyTaxToSnackpassContribution": false,
+        "shouldDiscountAddons": false,
+        "isKioskEligible": false,
+        "isArchived": false,
+        "lastUsedAt": "2026-09-09T02:37:24.020Z",
+        "lastPurchaseAt": "2026-09-09T02:37:24.917Z",
+        "imageUrl": null,
+        "isLeadPromotion": false,
+        "firstPromotionUses": 237,
+        "autoApply": false,
+        "zeroBagFee": false,
+        "createdAt": "2025-08-06T16:00:24.304Z",
+        "updatedAt": "2026-09-09T02:37:24.916Z",
+        "__v": 0
+      },
+      {
+        "_id": "68937c3e1317578ab48dbc5f",
+        "conditions": {
+          "_id": "68937c3e1317578ab48dbc60"
+        },
+        "rewardExpiration": null,
+        "name": "Free Creme Brulee, Matcha, Smoothie, or Fruit Tea",
+        "marketingName": "Free Creme Brulee, Matcha, Smoothie, or Fruit Tea",
+        "nameForStore": "Free Creme Brulee, Matcha, Smoothie, or Fruit Tea",
+        "isRunning": true,
+        "targets": [],
+        "store": {
+          "_id": "6848d33eee23105a54b0d933",
+          "name": "TeaZenTea (Brentwood, 1135 2nd St)",
+          "emoji": "🧋",
+          "color": "#47d75f"
+        },
+        "geolocation": {
+          "type": "Point",
+          "coordinates": [
+            -121.6981245,
+            37.9368993
+          ]
+        },
+        "activeTimePeriod": null,
+        "showActiveTimePeriodCountdown": false,
+        "hours": null,
+        "multiuse": true,
+        "maximumUses": null,
+        "isEmployeeMode": false,
+        "nonCombinable": false,
+        "storewide": false,
+        "productIds": [],
+        "categories": [
+          "685c09634d0b9365db8ada47",
+          "685c09634d0b9365db8ada98",
+          "685c09634d0b9365db8ada95",
+          "685c09634d0b9365db8ada63"
+        ],
+        "pointsRequired": 9000,
+        "invitesRequired": 0,
+        "discount": {
+          "percentOff": 100
+        },
+        "storeCredit": null,
+        "type": "REWARD",
+        "totalUses": 953,
+        "newCustomerPurchases": 908,
+        "totalPurchases": 943,
+        "tabletShowsPromotionDiscount": true,
+        "promotionCreator": "store",
+        "accounting": {
+          "totalAmountSpent": {
+            "store": 146.54999999999998,
+            "snackpass": 0
+          },
+          "voidCommissionOnPurchase": false,
+          "commissionVoidItem": false,
+          "contributionPolicies": [
+            {
+              "snackpassSubsidizationPercent": null,
+              "snackpassSubsidizationDollars": null,
+              "commissionVoid": false,
+              "voidCommissionOnSnackpassSubsidy": false,
+              "conditions": {
+                "redemptions": null,
+                "dollarsDiscounted": null,
+                "dates": null
+              },
+              "_id": "68937c3e1317578ab48dbc61"
+            }
+          ]
+        },
+        "applyTaxToSnackpassContribution": false,
+        "shouldDiscountAddons": false,
+        "isKioskEligible": false,
+        "isArchived": false,
+        "lastUsedAt": "2026-09-09T01:53:23.435Z",
+        "lastPurchaseAt": "2026-09-09T01:53:24.222Z",
+        "imageUrl": null,
+        "isLeadPromotion": false,
+        "firstPromotionUses": 347,
+        "autoApply": false,
+        "zeroBagFee": false,
+        "createdAt": "2025-08-06T16:01:02.390Z",
+        "updatedAt": "2026-09-09T01:53:24.221Z",
+        "__v": 0
+      },
+      {
+        "_id": "68937c525b9e809234c8e1f4",
+        "conditions": {
+          "_id": "68eb11d0759656786ef7d48c"
+        },
+        "rewardExpiration": null,
+        "name": "FREE  Magical or Butterfly Tea",
+        "marketingName": "FREE  Magical or Butterfly Tea",
+        "nameForStore": "FREE  Magical or Butterfly Tea",
+        "isRunning": true,
+        "targets": [],
+        "store": {
+          "_id": "6848d33eee23105a54b0d933",
+          "name": "TeaZenTea (Brentwood, 1135 2nd St)",
+          "emoji": "🧋",
+          "color": "#47d75f"
+        },
+        "geolocation": {
+          "type": "Point",
+          "coordinates": [
+            -121.6981245,
+            37.9368993
+          ]
+        },
+        "activeTimePeriod": null,
+        "showActiveTimePeriodCountdown": false,
+        "hours": null,
+        "multiuse": true,
+        "maximumUses": null,
+        "isEmployeeMode": false,
+        "nonCombinable": false,
+        "storewide": false,
+        "productIds": [],
+        "categories": [
+          "685c09634d0b9365db8adab7"
+        ],
+        "pointsRequired": 10000,
+        "invitesRequired": 0,
+        "discount": {
+          "dollarsOff": 5.5
+        },
+        "storeCredit": null,
+        "type": "REWARD",
+        "totalUses": 198,
+        "newCustomerPurchases": 189,
+        "totalPurchases": 196,
+        "tabletShowsPromotionDiscount": true,
+        "promotionCreator": "store",
+        "accounting": {
+          "totalAmountSpent": {
+            "store": 16.5,
+            "snackpass": 0
+          },
+          "voidCommissionOnPurchase": false,
+          "commissionVoidItem": false,
+          "contributionPolicies": [
+            {
+              "snackpassSubsidizationPercent": null,
+              "snackpassSubsidizationDollars": null,
+              "commissionVoid": false,
+              "voidCommissionOnSnackpassSubsidy": false,
+              "conditions": {
+                "redemptions": null,
+                "dollarsDiscounted": null,
+                "dates": null
+              },
+              "_id": "68eb11d0759656786ef7d48d"
+            }
+          ]
+        },
+        "applyTaxToSnackpassContribution": false,
+        "shouldDiscountAddons": false,
+        "isKioskEligible": false,
+        "isArchived": false,
+        "lastUsedAt": "2026-08-22T00:21:46.613Z",
+        "lastPurchaseAt": "2026-08-22T00:21:47.109Z",
+        "imageUrl": null,
+        "isLeadPromotion": false,
+        "firstPromotionUses": 113,
+        "autoApply": false,
+        "zeroBagFee": false,
+        "createdAt": "2025-08-06T16:01:22.890Z",
+        "updatedAt": "2026-08-22T00:21:47.108Z",
+        "__v": 2
+      }
+    ]
+  },
+  "success": true
+}

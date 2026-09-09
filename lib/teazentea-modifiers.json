@@ -1,0 +1,877 @@
+{
+  "modifier_categories": {
+    "Fruit": [
+      "Mango",
+      "Strawberry"
+    ],
+    "Topping": [
+      "Boba",
+      "Creme Brulee",
+      "Crystal Boba",
+      "Double Boba",
+      "Extra Shot of Coffee",
+      "Extra Shot of Matcha",
+      "Foam - Egg Foam",
+      "Foam - Matcha",
+      "Foam - Sea Salt Cheese Crema",
+      "Foam - Tiramisu",
+      "Foam - Ube Taro",
+      "Herbal/ Grass",
+      "Jelly - Coffee",
+      "Jelly - Lychee",
+      "Jelly - Mango Star",
+      "Jelly - Sakura Pink Heart",
+      "Light Boba",
+      "Popping Lychee",
+      "Popping Mango",
+      "Popping Strawberry",
+      "Pudding"
+    ],
+    "Sweetness": [
+      "100% Sweet",
+      "25%  Sweet",
+      "50% Sweet",
+      "75% Sweet",
+      "Extra Sweet",
+      "None Sweet",
+      "Regular Sugar"
+    ],
+    "Ice": [
+      "Extra Ice",
+      "Less Ice",
+      "None Ice",
+      "Regular Ice"
+    ],
+    "Tea Flavor": [
+      "Chocolate",
+      "Classic/No Flavor",
+      "Coconut",
+      "Coffee",
+      "Dragon Fruit",
+      "Honey",
+      "Honey Lemon",
+      "Honeydew",
+      "Lychee",
+      "Mango",
+      "Matcha",
+      "Mocha",
+      "Passion Fruit",
+      "Peach",
+      "Pineapple",
+      "Rose",
+      "Strawberry",
+      "Taro",
+      "Watrermelon"
+    ],
+    "Fruit Options": [
+      "Mango",
+      "Mango.",
+      "Strawberry",
+      "Strawberry."
+    ],
+    "Tiramisu Flavor": [
+      "Matcha",
+      "Mocha"
+    ],
+    "Tayaki #1": [
+      "Cheddar Cheese",
+      "Custard",
+      "Mozzarella Cheese",
+      "Nutella",
+      "Original (No Filling)",
+      "Taro"
+    ],
+    "Tayaki #2": [
+      "Cheddar Cheese",
+      "Custard",
+      "Mozzarella Cheese",
+      "Nutella",
+      "Original (No Filling)",
+      "Taro"
+    ],
+    "Tayaki #3": [
+      "Cheddar Cheese",
+      "Custard",
+      "Mozzarella Cheese",
+      "Nutella",
+      "Original (No Filling)",
+      "Taro"
+    ],
+    "Tayaki #4": [
+      "Cheddar Cheese",
+      "Custard",
+      "Mozzarella Cheese",
+      "Nutella",
+      "Original (No Filling)",
+      "Taro"
+    ],
+    "Tayaki #5": [
+      "Cheddar Cheese",
+      "Custard",
+      "Mozzarella Cheese",
+      "Nutella",
+      "Original (No Filling)",
+      "Taro"
+    ],
+    "Love Story Topping": [
+      "Lychee Jelly",
+      "Sakura Heart"
+    ]
+  },
+  "drink_name_to_categories": {
+    "Truffle Bliss Fries": [],
+    "Mochi/Daifuku - 1 Piece": [
+      "Fruit"
+    ],
+    "Creme Brulee": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Tiger Creme Brulee": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Matcha Creme Brulee": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Ube Taro Creme Brulee": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Brown Sugar Milk Tea w Cream": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Brown Sugar Green Milk Tea w Cream": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Brown Sugar Milk w Cream": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Brown Sugar Matcha w Cream": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "TeaZenTea Milk Tea": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Thai Milk Tea": [
+      "Ice",
+      "Topping"
+    ],
+    "Green Milk Tea": [
+      "Ice",
+      "Sweetness",
+      "Tea Flavor",
+      "Topping"
+    ],
+    "Black Milk Tea": [
+      "Ice",
+      "Sweetness",
+      "Tea Flavor",
+      "Topping"
+    ],
+    "Avocado Smoothie": [
+      "Sweetness",
+      "Topping"
+    ],
+    "Oreo Smoothie": [
+      "Sweetness",
+      "Topping"
+    ],
+    "Mango Smoothie": [
+      "Sweetness",
+      "Topping"
+    ],
+    "Strawberry Smoothie": [
+      "Sweetness",
+      "Topping"
+    ],
+    "Taro Smoothie": [
+      "Sweetness",
+      "Topping"
+    ],
+    "Banana Smoothie": [
+      "Sweetness",
+      "Topping"
+    ],
+    "Chocolate Smoothie": [
+      "Sweetness",
+      "Topping"
+    ],
+    "Chocolate Strawberry Smoothie": [
+      "Sweetness",
+      "Topping"
+    ],
+    "Coffee Smoothie": [
+      "Sweetness",
+      "Topping"
+    ],
+    "Dragon Fruit Smoothie": [
+      "Sweetness",
+      "Topping"
+    ],
+    "Honeydew Smoothie": [
+      "Sweetness",
+      "Topping"
+    ],
+    "Matcha Smoothie": [
+      "Sweetness",
+      "Topping"
+    ],
+    "Mocha Frappe Smoothie": [
+      "Sweetness",
+      "Topping"
+    ],
+    "Strawberry Banana Smoothie": [
+      "Sweetness",
+      "Topping"
+    ],
+    "Thai Tea Smoothie": [
+      "Sweetness",
+      "Topping"
+    ],
+    "Blue Raspberry Slushy": [
+      "Sweetness",
+      "Topping"
+    ],
+    "Mango Slushy": [
+      "Sweetness",
+      "Topping"
+    ],
+    "Strawberry Slushy": [
+      "Sweetness",
+      "Topping"
+    ],
+    "Watermelon Slushy": [
+      "Sweetness",
+      "Topping"
+    ],
+    "Passion Fruit Slushy": [
+      "Sweetness",
+      "Topping"
+    ],
+    "Honeydew Slushy": [
+      "Sweetness",
+      "Topping"
+    ],
+    "Lychee Slushy": [
+      "Sweetness",
+      "Topping"
+    ],
+    "Peach Slushy": [
+      "Sweetness",
+      "Topping"
+    ],
+    "Pineapple Slushy": [
+      "Sweetness",
+      "Topping"
+    ],
+    "Mango Summer": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Strawberry Summer": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Pink Dragon": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Sunset Passion BPT": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Guava Paradise": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Guava Summer": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Tropical Guava": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Mango Matcha Latte": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Strawberry Matcha Latte": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Matcha Latte": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Strawberry Cow": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Rose Matcha Latte": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Passion Fruit Mixed Fruit Juice": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Strawberry Juice": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Mango Juice": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Snow White BPT": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Belle BPT": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Night Prince BPT": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Princess Rose BPT": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Princess Peach BPT": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Lemonade BPT": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Salted Cheese Cloud Creamy Coffee/Cafe Muối - Size M": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Vietnamese Coffee": [
+      "Sweetness",
+      "Topping"
+    ],
+    "Coconut Coffee": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "SaiGon Drip Coffee/Cafe Đen Đá": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Egg Cloud Creamy Coffee/Cafe Trứng - Size M": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Dalgona Coffee": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Ubetaro Cloud Creamy Coffee - Size M": [
+      "Sweetness",
+      "Topping"
+    ],
+    "White Creamy Coffee/Bạc Xỉu - Size M": [
+      "Sweetness",
+      "Topping"
+    ],
+    "Tiramisu Cloud Creamy Coffee - Size M": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "TeaZenTea Waffle": [],
+    "Green Tea": [
+      "Ice",
+      "Sweetness",
+      "Tea Flavor",
+      "Topping"
+    ],
+    "Black Tea": [
+      "Ice",
+      "Sweetness",
+      "Tea Flavor",
+      "Topping"
+    ],
+    "Egg Coffee/Cafe Trứng": [
+      "Sweetness",
+      "Topping"
+    ],
+    "Ube Taro Waffle": [],
+    "Honey Black Tea": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Honey Lemon Black Tea": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Mango Black Tea": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Rose Black Tea": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Strawberry Black Tea": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Honey Green Tea": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Honey Lemon Green Tea": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Rose Green Tea": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Passion Fruit Green Tea": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Passion Fruit Black Tea": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Mango Green Tea": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Strawberry Green Tea": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Taro Black Milk Tea": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Honey Milk Tea": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Macaron - Set of 6": [],
+    "Physical Gift Card": [],
+    "Digital Gift Card": [],
+    "Princess Taro Milk": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Taro Milk": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Chocolate Milk": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Mango Milk": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Mocha Milk": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Strawberry Milk": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Rose Milk": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Coconut Matcha Cloud": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "CocoKale Avocado Blend": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Coconut Dalgona Coffee Cloud": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Milk": [
+      "Ice",
+      "Sweetness",
+      "Tea Flavor",
+      "Topping"
+    ],
+    "ZOMBIE SLUSH": [
+      "Sweetness",
+      "Topping"
+    ],
+    "PUMPKIN THAI": [
+      "Ice",
+      "Topping"
+    ],
+    "BLOODY MATCHA": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "THAI O’ LANTERN": [
+      "Ice",
+      "Topping"
+    ],
+    "WITCH’S BREW": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Mochi/Daifuku - 2 Pieces": [
+      "Fruit Options"
+    ],
+    "Okinawa Brown Sugar": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Okinawa Brown Sugar Smoothie": [
+      "Sweetness",
+      "Topping"
+    ],
+    "Tiramisu Cake": [
+      "Tiramisu Flavor"
+    ],
+    "Oreo Ribbon": [
+      "Sweetness",
+      "Topping"
+    ],
+    "Matcha Ribbon": [
+      "Sweetness",
+      "Topping"
+    ],
+    "Mango Ribbon": [
+      "Sweetness",
+      "Topping"
+    ],
+    "Strawberry Banana Ribbon": [
+      "Sweetness",
+      "Topping"
+    ],
+    "Taro Ribbon": [
+      "Sweetness",
+      "Topping"
+    ],
+    "Coffee Ribbon": [
+      "Sweetness",
+      "Topping"
+    ],
+    "Taiyaki - 3 Pieces": [
+      "Tayaki #1",
+      "Tayaki #2",
+      "Tayaki #3"
+    ],
+    "Taiyaki - 5 Pieces": [
+      "Tayaki #1",
+      "Tayaki #2",
+      "Tayaki #3",
+      "Tayaki #4",
+      "Tayaki #5"
+    ],
+    "Taiyaki - 1 Piece": [
+      "Tayaki #1"
+    ],
+    "Okinawa Creme Brulee": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Egg Roll - 3 Pieces": [],
+    "Egg Roll - 5 Pieces": [],
+    "You - Strawberry First Crush": [
+      "Love Story Topping",
+      "Sweetness",
+      "Topping"
+    ],
+    "Me - Matcha Love Promise": [
+      "Ice",
+      "Love Story Topping",
+      "Sweetness",
+      "Topping"
+    ],
+    "US - Dubai Chocolate Forever Dream": [
+      "Ice",
+      "Love Story Topping",
+      "Sweetness",
+      "Topping"
+    ],
+    "Dubai Chewy Cookie - 1 Piece": [],
+    "Ube Cloud Coconut Coffee": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Salted Cloud Ice Coffee": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Matcha Supreme": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Citrus Green Grow": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Cloud Nine Mango": [
+      "Sweetness",
+      "Topping"
+    ],
+    "Sun-Kissed Biscoff Smoothie": [
+      "Sweetness",
+      "Topping"
+    ],
+    "Golden Peach": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Watermelon Sunset": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Butter Corn": [],
+    "Fluffy Fried Bun (2 pieces)": [],
+    "Veggie Rice Rolls": [],
+    "Material Girl": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Hips Don't Lychee": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ],
+    "Kyoto Twilight": [
+      "Ice",
+      "Sweetness",
+      "Topping"
+    ]
+  },
+  "all_drink_names": [
+    "Avocado Smoothie",
+    "BLOODY MATCHA",
+    "Banana Smoothie",
+    "Belle BPT",
+    "Black Milk Tea",
+    "Black Tea",
+    "Blue Raspberry Slushy",
+    "Brown Sugar Green Milk Tea w Cream",
+    "Brown Sugar Matcha w Cream",
+    "Brown Sugar Milk Tea w Cream",
+    "Brown Sugar Milk w Cream",
+    "Butter Corn",
+    "Chocolate Milk",
+    "Chocolate Smoothie",
+    "Chocolate Strawberry Smoothie",
+    "Citrus Green Grow",
+    "Cloud Nine Mango",
+    "CocoKale Avocado Blend",
+    "Coconut Coffee",
+    "Coconut Dalgona Coffee Cloud",
+    "Coconut Matcha Cloud",
+    "Coffee Ribbon",
+    "Coffee Smoothie",
+    "Creme Brulee",
+    "Dalgona Coffee",
+    "Digital Gift Card",
+    "Dragon Fruit Smoothie",
+    "Dubai Chewy Cookie - 1 Piece",
+    "Egg Cloud Creamy Coffee/Cafe Trứng - Size M",
+    "Egg Coffee/Cafe Trứng",
+    "Egg Roll - 3 Pieces",
+    "Egg Roll - 5 Pieces",
+    "Fluffy Fried Bun (2 pieces)",
+    "Golden Peach",
+    "Green Milk Tea",
+    "Green Tea",
+    "Guava Paradise",
+    "Guava Summer",
+    "Hips Don't Lychee",
+    "Honey Black Tea",
+    "Honey Green Tea",
+    "Honey Lemon Black Tea",
+    "Honey Lemon Green Tea",
+    "Honey Milk Tea",
+    "Honeydew Slushy",
+    "Honeydew Smoothie",
+    "Kyoto Twilight",
+    "Lemonade BPT",
+    "Lychee Slushy",
+    "Macaron - Set of 6",
+    "Mango Black Tea",
+    "Mango Green Tea",
+    "Mango Juice",
+    "Mango Matcha Latte",
+    "Mango Milk",
+    "Mango Ribbon",
+    "Mango Slushy",
+    "Mango Smoothie",
+    "Mango Summer",
+    "Matcha Creme Brulee",
+    "Matcha Latte",
+    "Matcha Ribbon",
+    "Matcha Smoothie",
+    "Matcha Supreme",
+    "Material Girl",
+    "Me - Matcha Love Promise",
+    "Milk",
+    "Mocha Frappe Smoothie",
+    "Mocha Milk",
+    "Mochi/Daifuku - 1 Piece",
+    "Mochi/Daifuku - 2 Pieces",
+    "Night Prince BPT",
+    "Okinawa Brown Sugar",
+    "Okinawa Brown Sugar Smoothie",
+    "Okinawa Creme Brulee",
+    "Oreo Ribbon",
+    "Oreo Smoothie",
+    "PUMPKIN THAI",
+    "Passion Fruit Black Tea",
+    "Passion Fruit Green Tea",
+    "Passion Fruit Mixed Fruit Juice",
+    "Passion Fruit Slushy",
+    "Peach Slushy",
+    "Physical Gift Card",
+    "Pineapple Slushy",
+    "Pink Dragon",
+    "Princess Peach BPT",
+    "Princess Rose BPT",
+    "Princess Taro Milk",
+    "Rose Black Tea",
+    "Rose Green Tea",
+    "Rose Matcha Latte",
+    "Rose Milk",
+    "SaiGon Drip Coffee/Cafe Đen Đá",
+    "Salted Cheese Cloud Creamy Coffee/Cafe Muối - Size M",
+    "Salted Cloud Ice Coffee",
+    "Snow White BPT",
+    "Strawberry Banana Ribbon",
+    "Strawberry Banana Smoothie",
+    "Strawberry Black Tea",
+    "Strawberry Cow",
+    "Strawberry Green Tea",
+    "Strawberry Juice",
+    "Strawberry Matcha Latte",
+    "Strawberry Milk",
+    "Strawberry Slushy",
+    "Strawberry Smoothie",
+    "Strawberry Summer",
+    "Sun-Kissed Biscoff Smoothie",
+    "Sunset Passion BPT",
+    "THAI O’ LANTERN",
+    "Taiyaki - 1 Piece",
+    "Taiyaki - 3 Pieces",
+    "Taiyaki - 5 Pieces",
+    "Taro Black Milk Tea",
+    "Taro Milk",
+    "Taro Ribbon",
+    "Taro Smoothie",
+    "TeaZenTea Milk Tea",
+    "TeaZenTea Waffle",
+    "Thai Milk Tea",
+    "Thai Tea Smoothie",
+    "Tiger Creme Brulee",
+    "Tiramisu Cake",
+    "Tiramisu Cloud Creamy Coffee - Size M",
+    "Tropical Guava",
+    "Truffle Bliss Fries",
+    "US - Dubai Chocolate Forever Dream",
+    "Ube Cloud Coconut Coffee",
+    "Ube Taro Creme Brulee",
+    "Ube Taro Waffle",
+    "Ubetaro Cloud Creamy Coffee - Size M",
+    "Veggie Rice Rolls",
+    "Vietnamese Coffee",
+    "WITCH’S BREW",
+    "Watermelon Slushy",
+    "Watermelon Sunset",
+    "White Creamy Coffee/Bạc Xỉu - Size M",
+    "You - Strawberry First Crush",
+    "ZOMBIE SLUSH"
+  ]
+}

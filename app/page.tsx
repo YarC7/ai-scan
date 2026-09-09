@@ -185,8 +185,7 @@ function ResultCard({ result, showRaw, onToggleRaw }: { result: OrderLabel; show
         )}
         {result.modifiers?.sweet && <ModRow label="Sweet" value={result.modifiers.sweet} />}
         {result.modifiers?.ice && <ModRow label="Ice" value={result.modifiers.ice} />}
-        {result.modifiers?.tea_base && <ModRow label="Tea" value={result.modifiers.tea_base} />}
-        {result.modifiers?.milk_base && <ModRow label="Milk" value={result.modifiers.milk_base} />}
+        {result.modifiers?.tea_flavor && <ModRow label="Flavor" value={result.modifiers.tea_flavor} />}
       </div>
       {result.notes && <p className="notes">📝 {result.notes}</p>}
       {result.unrecognized_text?.length > 0 && <p className="unrecognized">Unrecognized: {result.unrecognized_text.join(', ')}</p>}

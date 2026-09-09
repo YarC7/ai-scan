@@ -1,0 +1,1746 @@
+{
+  "stores": [
+    {
+      "name": "TeaZenTea (Brentwood, 1135 2nd St)",
+      "phoneNumber": "+19256265747",
+      "address": "1135 2nd St suite c,Ste C, Brentwood, CA 94513, USA",
+      "color": "#47d75f",
+      "emoji": "🧋",
+      "closedUntil": null,
+      "hasConvenienceFee": false,
+      "convenienceFee": 0,
+      "convenienceFeePolicies": [
+        {
+          "transactionSource": "app",
+          "value": 0
+        },
+        {
+          "transactionSource": "kiosk",
+          "value": 0
+        },
+        {
+          "transactionSource": "online",
+          "value": 0
+        }
+      ],
+      "delivery": true,
+      "deliveryFee": 0,
+      "deliveryMin": 0,
+      "deliveryTime": null,
+      "deliveryRanges": [
+        {
+          "deliveryFee": 0,
+          "deliveryMin": 0,
+          "start": 0,
+          "end": 5,
+          "feePolicies": [
+            {
+              "name": "3P_DELIVERY_FEE",
+              "description": null,
+              "payer": "customer",
+              "recipient": "snackpass",
+              "flat": 5.99,
+              "percent": 0,
+              "isTaxable": true
+            }
+          ],
+          "_id": "690bc83aac75f804776586b8"
+        }
+      ],
+      "hasSpecialDeliveryHours": false,
+      "hasScheduledOrders": true,
+      "hasBatching": false,
+      "hasGiftCardsEnabled": true,
+      "scheduleAheadInterval": 15,
+      "scheduleAheadBatchSize": 10,
+      "scheduleAheadFirstTimeSlotBuffer": 15,
+      "specialDeliveryHours": null,
+      "dineInPreferences": {
+        "hasDineIn": false,
+        "serviceType": null,
+        "directions": null,
+        "requireTableNumber": false
+      },
+      "pickup": true,
+      "deliveryOnlyEmail": "",
+      "faxNumber": null,
+      "geolocation": {
+        "type": "Point",
+        "coordinates": [
+          -121.6981245,
+          37.9368993
+        ]
+      },
+      "hours": {
+        "zone": "America/Los_Angeles",
+        "local": [
+          {
+            "start": 660,
+            "end": 1260
+          },
+          {
+            "start": 2100,
+            "end": 2700
+          },
+          {
+            "start": 3540,
+            "end": 4140
+          },
+          {
+            "start": 4980,
+            "end": 5580
+          },
+          {
+            "start": 6420,
+            "end": 7080
+          },
+          {
+            "start": 7860,
+            "end": 8520
+          },
+          {
+            "start": 9300,
+            "end": 9900
+          }
+        ],
+        "special": [],
+        "eastern": [
+          {
+            "start": 840,
+            "end": 1440
+          },
+          {
+            "start": 2280,
+            "end": 2880
+          },
+          {
+            "start": 3720,
+            "end": 4320
+          },
+          {
+            "start": 5160,
+            "end": 5760
+          },
+          {
+            "start": 6600,
+            "end": 7260
+          },
+          {
+            "start": 8040,
+            "end": 8700
+          },
+          {
+            "start": 0,
+            "end": 1
+          },
+          {
+            "start": 9480,
+            "end": 10079
+          }
+        ],
+        "offset": -180
+      },
+      "region": "defaultregion",
+      "pod": "",
+      "tags": [],
+      "taxRate": 8.75,
+      "specifyTaxRateByFulfillment": false,
+      "taxRateDineIn": 0,
+      "taxRatePickup": 0,
+      "taxRateDelivery": 0,
+      "isLive": false,
+      "tabletOffline": false,
+      "isOpen": false,
+      "payInStore": false,
+      "onlineOrderingEnabled": true,
+      "aboutUs": "",
+      "imageContent": [],
+      "socialMediaPages": [],
+      "kioskPreferences": {
+        "attractScreenUrl": "https://res.cloudinary.com/ddhetmqtt/video/upload/v1749839616/rdb-assets/a2qbk5scrophljuavpvm.mp4",
+        "customWayfindingMessage": ""
+      },
+      "registerRewardsEnabled": true,
+      "tipImageUrl": "",
+      "productCategories": [
+        {
+          "name": "Seasonal",
+          "productIds": [
+            "6a97ce0fff41ad57c9f8c691",
+            "6a42eb17521843ebfb258e47",
+            "6a2cd5fb89b84fb1bebf53f7",
+            "6a2cd623406525a96f309799",
+            "6a2cd640ee84aba08b6ac8da",
+            "6a2cd67b6c0035534002174c",
+            "6a2cd6c0ee84aba08b6af6fd",
+            "6a42eb53d4b1cdf6fd7f3285"
+          ],
+          "isArchived": null,
+          "_id": "6a2cd5fc89b84fb1bebf5415"
+        },
+        {
+          "name": "Lover Story",
+          "productIds": [
+            "698fdb7d1f4a92962873e666",
+            "698fdc09a05dc96817c30e40",
+            "698fdcff17ea5229aa741bf4",
+            "698fdf536ede6c713f42e718"
+          ],
+          "isArchived": null,
+          "_id": "698fdb7d1f4a92962873e685"
+        },
+        {
+          "name": "Brulee Ribbon Series",
+          "productIds": [
+            "6934767f0ddf670c52daa155",
+            "6934774203c8a965dea74478",
+            "693477b103c8a965dea77303",
+            "6934785d6dac885dd5d02687",
+            "6934788d6e6c154244f72294",
+            "693659d87448bfc66127a678"
+          ],
+          "isArchived": null,
+          "_id": "6934767f0ddf670c52daa1a2"
+        },
+        {
+          "name": "Creme Brulee",
+          "productIds": [
+            "685c09624d0b9365db8ace49",
+            "69646d56634ce197e6f1eabe",
+            "685c09624d0b9365db8ace6a",
+            "685c09624d0b9365db8ace8b",
+            "685c09624d0b9365db8aceac"
+          ],
+          "isArchived": null,
+          "_id": "685c09634d0b9365db8ada47"
+        },
+        {
+          "name": "Brown Sugar",
+          "productIds": [
+            "685c09624d0b9365db8acecd",
+            "685c09624d0b9365db8aceee",
+            "685c09624d0b9365db8acf0f",
+            "685c09624d0b9365db8acf30",
+            "691a399a7e70f21c223f07a5"
+          ],
+          "isArchived": null,
+          "_id": "685c09634d0b9365db8ada48"
+        },
+        {
+          "name": "Milk Tea/Milk",
+          "productIds": [
+            "685c09624d0b9365db8acf51",
+            "685c09624d0b9365db8acf83",
+            "685c09624d0b9365db8acfd6",
+            "685c09624d0b9365db8acfa4",
+            "6889b82023cb68e2ed655ebd",
+            "6889b7ac9c27a84b65be2b0b",
+            "688ff3c6a7d73c13c6867dae",
+            "688ff3e7cf4052cb4a406d48",
+            "688ff4033f44f28f7ad52bee",
+            "688ff3570fca36020c4bc601",
+            "688ff487879464f90daeff52",
+            "688ff44ea7d73c13c686be27",
+            "688ff3810a46b5b251381c92",
+            "68cb65d161f0cb4c21c2c430"
+          ],
+          "isArchived": null,
+          "_id": "685c09634d0b9365db8ada49"
+        },
+        {
+          "name": "Premium Tea",
+          "productIds": [
+            "685c09624d0b9365db8ad04e",
+            "685c09624d0b9365db8ad00d",
+            "6889b09b3233697749808b6d",
+            "6889b0ce3233697749809e78",
+            "6889b109cebfe29b8c6f9911",
+            "6889b34d038f97a20ac130c2",
+            "6889b11558180f8761cc1788",
+            "6889b1307de5bb3631f34efd",
+            "6889b15dcebfe29b8c6fb5fa",
+            "6889b16958180f8761cc4be9",
+            "6889b37afb866ad45bb8f3ed",
+            "6889b1b6387391d3562b01dc",
+            "6889b1897de5bb3631f373d3",
+            "6889b383cebfe29b8c70b3d9"
+          ],
+          "isArchived": null,
+          "_id": "685c09644d0b9365db8adace"
+        },
+        {
+          "name": "Smoothie",
+          "productIds": [
+            "685c09624d0b9365db8ad08f",
+            "685c09624d0b9365db8ad0f8",
+            "685c09624d0b9365db8ad10d",
+            "685c09624d0b9365db8ad122",
+            "685c09624d0b9365db8ad137",
+            "69f6e940c6d716d97d69eb8b",
+            "685c09624d0b9365db8ad14c",
+            "685c09624d0b9365db8ad161",
+            "685c09624d0b9365db8ad176",
+            "685c09624d0b9365db8ad18b",
+            "691a39fce466d79353d7ece0",
+            "685c09624d0b9365db8ad0a4",
+            "685c09624d0b9365db8ad0b9",
+            "685c09624d0b9365db8ad0ce",
+            "685c09624d0b9365db8ad1b5",
+            "6a36330ea06dbad13f3112a1",
+            "685c09624d0b9365db8ad0e3",
+            "685c09624d0b9365db8ad1ca"
+          ],
+          "isArchived": null,
+          "_id": "685c09634d0b9365db8ada63"
+        },
+        {
+          "name": "Slushy",
+          "productIds": [
+            "685c09624d0b9365db8ad1f4",
+            "685c09624d0b9365db8ad272",
+            "685c09624d0b9365db8ad287",
+            "685c09624d0b9365db8ad209",
+            "685c09624d0b9365db8ad248",
+            "685c09624d0b9365db8ad29c",
+            "685c09624d0b9365db8ad2b1",
+            "685c09624d0b9365db8ad21e",
+            "685c09624d0b9365db8ad233"
+          ],
+          "isArchived": null,
+          "_id": "685c09634d0b9365db8ada70"
+        },
+        {
+          "name": "Fruit Series",
+          "productIds": [
+            "685c09624d0b9365db8ad2c6",
+            "685c09624d0b9365db8ad312",
+            "685c09624d0b9365db8ad2ec",
+            "685c09624d0b9365db8ad359",
+            "685c09624d0b9365db8ad37a",
+            "685c09624d0b9365db8ad3a0",
+            "685c09624d0b9365db8ad3c6",
+            "69f6e8ebefb499dd7e05eb64"
+          ],
+          "isArchived": null,
+          "_id": "685c09634d0b9365db8ada98"
+        },
+        {
+          "name": "Matcha/Latte Collection",
+          "productIds": [
+            "685c09624d0b9365db8ad3ec",
+            "685c09624d0b9365db8ad43e",
+            "685c09624d0b9365db8ad490",
+            "685c09624d0b9365db8ad467",
+            "685c09624d0b9365db8ad415",
+            "68c7eb007a8cc812ac7719ec",
+            "69f6e8818caa0152f510fc98",
+            "6a97dc67a7ec7392ee8acc7a",
+            "6a97dc74dfe221348580cc6e"
+          ],
+          "isArchived": null,
+          "_id": "685c09634d0b9365db8ada95"
+        },
+        {
+          "name": "Juice",
+          "productIds": [
+            "685c09624d0b9365db8ad6d1",
+            "685c09624d0b9365db8ad62c",
+            "685c09624d0b9365db8ad64d"
+          ],
+          "isArchived": null,
+          "_id": "685c09634d0b9365db8adab4"
+        },
+        {
+          "name": "Magical/Butterfly Tea",
+          "productIds": [
+            "685c09634d0b9365db8ad73d",
+            "685c09634d0b9365db8ad803",
+            "685c09634d0b9365db8ad75e",
+            "685c09634d0b9365db8ad7c1",
+            "685c09634d0b9365db8ad7a0",
+            "685c09634d0b9365db8ad71c",
+            "685c09634d0b9365db8ad77f"
+          ],
+          "isArchived": null,
+          "_id": "685c09634d0b9365db8adab7"
+        },
+        {
+          "name": "Coffee/Creamy Coffee",
+          "productIds": [
+            "685c09634d0b9365db8ad866",
+            "685c09634d0b9365db8ad887",
+            "685c09634d0b9365db8ad8ea",
+            "685c5211cf6c578322368b14",
+            "685c09634d0b9365db8ad8a8",
+            "685c09634d0b9365db8ad8c9",
+            "685c09634d0b9365db8ad845",
+            "685c09634d0b9365db8ad94d",
+            "685c09634d0b9365db8ad90b",
+            "685c09634d0b9365db8ad92c",
+            "68c7eb1aebb487342e6e8e5e",
+            "69f6e83e1d913a1d48e6c51a",
+            "69f6e7d95cdcf6153d955ed9"
+          ],
+          "isArchived": null,
+          "_id": "685c09634d0b9365db8adab8"
+        },
+        {
+          "name": "Deserts",
+          "productIds": [
+            "6a3d67cbe4dc4c75af93dce4",
+            "694c115236f0d678c86abfc5",
+            "6938d71753fdb9dfe10a057c",
+            "6938d78defaa23a29555a506",
+            "685c09634d0b9365db8ad9c8",
+            "68f29bb0f19ea7c8530ffae7",
+            "6889b8ce323369774983ceed",
+            "691d377d5443a37540b0d994",
+            "685c09634d0b9365db8ad991",
+            "685c53f6105ce6eec8335440"
+          ],
+          "isArchived": null,
+          "_id": "6a3d67cbe4dc4c75af93dce6"
+        },
+        {
+          "name": "Vegetarian Food",
+          "productIds": [
+            "685c09634d0b9365db8ad9c9",
+            "6986bf68de14c4975d5c0a4b",
+            "6986bfd15240fc7467a17e1f",
+            "6a3d69e2851ba91caececb73",
+            "6a3d6a25851ba91caeceed29",
+            "6a3d6a5dd28a97289e20f890"
+          ],
+          "isArchived": null,
+          "_id": "685c09634d0b9365db8ada46"
+        },
+        {
+          "name": "HydroCoco Energ",
+          "productIds": [
+            "68c18c977a8cc812acb404f5",
+            "6897a25379db9a8bfb09a84e",
+            "6897a3550beb4222efc7117d"
+          ],
+          "isArchived": null,
+          "_id": "6897a25379db9a8bfb09a873"
+        },
+        {
+          "name": "Halloween Series",
+          "productIds": [
+            "68edb6516a691f714b7dafe0",
+            "68edb6a938e92862131411c9",
+            "68edb6da4e7148aba2e8e58f",
+            "68edb7100e33a0509aea93bb",
+            "68edb73e6b574b9ea22df043"
+          ],
+          "isArchived": null,
+          "_id": "68edb6516a691f714b7daffc"
+        },
+        {
+          "name": "Gift Cards",
+          "productIds": [
+            "688d29bd5b1a01cff0729a9d",
+            "688d29be0fca36020c13a27c"
+          ],
+          "isArchived": null,
+          "specialProductCategory": "GIFT_CARD",
+          "_id": "6a97ce27cb437d23fe65cef0"
+        }
+      ],
+      "pictureMenuProductIds": [
+        "685c09634d0b9365db8ad990",
+        "685c09634d0b9365db8ad98f",
+        "685c09634d0b9365db8ad9ac",
+        "685c09634d0b9365db8ad9c9",
+        "685c09634d0b9365db8ad9c8",
+        "685c09624d0b9365db8ace49",
+        "685c09624d0b9365db8ace8b",
+        "685c09624d0b9365db8ace6a",
+        "685c09624d0b9365db8aceac",
+        "685c09624d0b9365db8aceee",
+        "685c09624d0b9365db8acf30",
+        "685c09624d0b9365db8acecd",
+        "685c09624d0b9365db8acf0f",
+        "685c09624d0b9365db8acf51",
+        "685c09624d0b9365db8acf83",
+        "685c09624d0b9365db8acfa4",
+        "685c09624d0b9365db8acfd6",
+        "685c09624d0b9365db8ad08f",
+        "685c09624d0b9365db8ad0a4",
+        "685c09624d0b9365db8ad0b9",
+        "685c09624d0b9365db8ad0ce",
+        "685c09624d0b9365db8ad0e3",
+        "685c09624d0b9365db8ad0f8",
+        "685c09624d0b9365db8ad10d",
+        "685c09624d0b9365db8ad122",
+        "685c09624d0b9365db8ad137",
+        "685c09624d0b9365db8ad14c",
+        "685c09624d0b9365db8ad161",
+        "685c09624d0b9365db8ad176",
+        "685c09624d0b9365db8ad18b",
+        "685c09624d0b9365db8ad1a0",
+        "685c09624d0b9365db8ad1b5",
+        "685c09624d0b9365db8ad1ca",
+        "685c09624d0b9365db8ad1df",
+        "685c09624d0b9365db8ad1f4",
+        "685c09624d0b9365db8ad209",
+        "685c09624d0b9365db8ad21e",
+        "685c09624d0b9365db8ad233",
+        "685c09624d0b9365db8ad248",
+        "685c09624d0b9365db8ad25d",
+        "685c09624d0b9365db8ad272",
+        "685c09624d0b9365db8ad287",
+        "685c09624d0b9365db8ad29c",
+        "685c09624d0b9365db8ad2b1",
+        "685c09624d0b9365db8ad2c6",
+        "685c09624d0b9365db8ad2ec",
+        "685c09624d0b9365db8ad312",
+        "685c09624d0b9365db8ad333",
+        "685c09624d0b9365db8ad359",
+        "685c09624d0b9365db8ad37a",
+        "685c09624d0b9365db8ad3a0",
+        "685c09624d0b9365db8ad3c6",
+        "685c09624d0b9365db8ad3ec",
+        "685c09624d0b9365db8ad415",
+        "685c09624d0b9365db8ad43e",
+        "685c09624d0b9365db8ad467",
+        "685c09624d0b9365db8ad490",
+        "685c09624d0b9365db8ad4b9",
+        "685c09624d0b9365db8ad4da",
+        "685c09624d0b9365db8ad503",
+        "685c09624d0b9365db8ad524",
+        "685c09624d0b9365db8ad545",
+        "685c09624d0b9365db8ad566",
+        "685c09624d0b9365db8ad587",
+        "685c09624d0b9365db8ad5a8",
+        "685c09624d0b9365db8ad5c9",
+        "685c09624d0b9365db8ad5ea",
+        "685c09624d0b9365db8ad60b",
+        "685c09624d0b9365db8ad62c",
+        "685c09624d0b9365db8ad64d",
+        "685c09624d0b9365db8ad66e",
+        "685c09624d0b9365db8ad68f",
+        "685c09624d0b9365db8ad6b0",
+        "685c09624d0b9365db8ad6d1",
+        "685c09634d0b9365db8ad6f2",
+        "685c09634d0b9365db8ad713",
+        "685c09634d0b9365db8ad71c",
+        "685c09634d0b9365db8ad73d",
+        "685c09634d0b9365db8ad75e",
+        "685c09634d0b9365db8ad77f",
+        "685c09634d0b9365db8ad7a0",
+        "685c09634d0b9365db8ad7c1",
+        "685c09634d0b9365db8ad7e2",
+        "685c09634d0b9365db8ad803",
+        "685c09634d0b9365db8ad824",
+        "685c09634d0b9365db8ad845",
+        "685c09634d0b9365db8ad866",
+        "685c09634d0b9365db8ad887",
+        "685c09634d0b9365db8ad8a8",
+        "685c09634d0b9365db8ad8c9",
+        "685c09634d0b9365db8ad8ea",
+        "685c09634d0b9365db8ad90b",
+        "685c09634d0b9365db8ad92c",
+        "685c09634d0b9365db8ad94d",
+        "685c09634d0b9365db8ad96e",
+        "685c09634d0b9365db8ad991",
+        "685c09634d0b9365db8ad9ad",
+        "685c09624d0b9365db8ad04e",
+        "685c09624d0b9365db8ad00d"
+      ],
+      "comingSoon": false,
+      "coverPhoto": null,
+      "rushHourUntil": null,
+      "rushHourDelay": 0,
+      "showTipOnPickup": true,
+      "showNoTip": true,
+      "noNotes": false,
+      "utensilsPromptEnabled": null,
+      "notes": "⚡ Refresh & Recharge! Try our new HydroCoco Energy Drinks today!",
+      "pickupMin": 0,
+      "catering": {
+        "allowDelivery": false,
+        "orderMinimum": 0,
+        "minLeadTime": 48,
+        "productCategories": [],
+        "email": null,
+        "enabled": false,
+        "createdAt": "2025-06-11T00:52:14.974Z",
+        "updatedAt": "2025-06-11T00:52:14.974Z"
+      },
+      "cateringEnabled": false,
+      "thumbnailUrl": "https://res.cloudinary.com/ddhetmqtt/image/upload/v1749844488/store-images/t4il80w2o3naosrgsotz.jpg",
+      "logoUrl": "https://res.cloudinary.com/ddhetmqtt/image/upload/v1749839379/store-images/pa5dfiew6rdg9wazbcaf.jpg",
+      "scheduledOrderMinLeadTime": 0,
+      "chainId": "6876cf679add56291960306c",
+      "chainConfig": [
+        {
+          "feature": "CHAIN_WIDE_PUNCHCARD",
+          "enabledDate": "2025-08-01T20:37:00.058Z",
+          "_id": "688d256c30edb4e39af8c501"
+        }
+      ],
+      "customFeePolicies": [],
+      "feePolicies": [],
+      "pickupDirections": "",
+      "scheduledOrderPosTriggerTime": 30,
+      "referralChannels": [
+        "684c6ed0fba9c1c40849e676",
+        "684c6f087bd4df07f7ebe6b1",
+        "6888067247cb004a366df430"
+      ],
+      "hasPickupNow": true,
+      "menuNotes": "",
+      "accountManager": null,
+      "accountExecutive": null,
+      "referralConversionText": "",
+      "allowViewEarningsOnTablet": true,
+      "defaultTip": {
+        "defaultTipType": "PERCENT",
+        "defaultTips": [
+          10,
+          15,
+          20,
+          25
+        ],
+        "defaultTipValue": 20
+      },
+      "defaultBagInCart": 0,
+      "collectTip": true,
+      "orderStatusConfiguration": 1,
+      "notifyOnFirstOrder": false,
+      "pickupTimeType": "range",
+      "defaultPickupTime": 0,
+      "defaultPickupMinTime": 5,
+      "defaultPickupMaxTime": 10,
+      "slug": "teazenteabrentwood",
+      "addressComponents": {
+        "line1": "1135 2nd St",
+        "line2": "Ste C",
+        "city": "Brentwood",
+        "county": "Contra Costa County",
+        "state": "CA",
+        "zip": "94513",
+        "country": "USA",
+        "full": "1135 2nd St suite c, Brentwood, CA 94513, USA",
+        "_id": "68880672387391d3566a1203"
+      },
+      "isArchived": false,
+      "hasPhysicalGiftCardEverBeenEnabled": true,
+      "brandCustomerPickupScreenMarketingUrl": "",
+      "brandColor": "#47d75f",
+      "brandSplashUrl": "https://res.cloudinary.com/ddhetmqtt/image/upload/v1759505378/rdb-assets/o9yodr0ful92zpkfayse.png",
+      "loyaltyCardBackgroundImage": "https://res.cloudinary.com/ddhetmqtt/image/upload/v1778274354/store-images/yjcq9hdxrdlldht3dn3x.jpg",
+      "primaryImage": null,
+      "secondaryImage": null,
+      "hideBrandingImagesOnOO": false,
+      "skipOtherPaymentConfirmation": false,
+      "smartReceiptCustomerMessage": null,
+      "waitTimeType": "MANUAL",
+      "useMulMenu": false,
+      "useCorporateMap": false,
+      "mapIcon": "https://res.cloudinary.com/ddhetmqtt/image/upload/v1749839422/store-images/b7q3adcvmhdipuavidoi.jpg",
+      "disablePopularSectionOnOO": false,
+      "kind": "brick_and_mortar",
+      "externalReviewUrl": null,
+      "customFeeLabels": {
+        "snackpassConvenienceLabel": null,
+        "snackpassConvenienceDescription": null,
+        "convenienceStoreLabel": null,
+        "convenienceStoreDescription": null,
+        "tipLabelPrefix": "Tip = Extra happiness in every sip"
+      },
+      "storeDelivers": false,
+      "disableDefaultMenu": false,
+      "_id": "6848d33eee23105a54b0d933"
+    },
+    {
+      "name": "TeaZenTea (Saratoga, 14410 Big Basin Wy D)",
+      "phoneNumber": "+14087408004",
+      "address": "14410 Big Basin Wy d, Saratoga, CA 95070, USA",
+      "color": "#47d75f",
+      "emoji": "🧋",
+      "closedUntil": null,
+      "hasConvenienceFee": false,
+      "convenienceFee": 0,
+      "convenienceFeePolicies": [
+        {
+          "transactionSource": "app",
+          "value": 0
+        },
+        {
+          "transactionSource": "kiosk",
+          "value": 0
+        },
+        {
+          "transactionSource": "online",
+          "value": 0
+        }
+      ],
+      "delivery": true,
+      "deliveryFee": 0,
+      "deliveryMin": 0,
+      "deliveryTime": null,
+      "deliveryRanges": [
+        {
+          "deliveryFee": 0,
+          "deliveryMin": 0,
+          "start": 0,
+          "end": 5,
+          "feePolicies": [
+            {
+              "name": "3P_DELIVERY_FEE",
+              "description": null,
+              "payer": "customer",
+              "recipient": "snackpass",
+              "flat": 5.99,
+              "percent": 0,
+              "isTaxable": true
+            }
+          ],
+          "_id": "690bca910191503ffa4ba047"
+        }
+      ],
+      "hasSpecialDeliveryHours": false,
+      "hasScheduledOrders": true,
+      "hasBatching": false,
+      "hasGiftCardsEnabled": true,
+      "scheduleAheadInterval": 15,
+      "scheduleAheadBatchSize": 10,
+      "scheduleAheadFirstTimeSlotBuffer": 15,
+      "specialDeliveryHours": {
+        "zone": "utc",
+        "local": [],
+        "special": [],
+        "eastern": [],
+        "offset": 240
+      },
+      "dineInPreferences": {
+        "hasDineIn": false,
+        "serviceType": null,
+        "directions": null,
+        "requireTableNumber": false
+      },
+      "pickup": true,
+      "deliveryOnlyEmail": "",
+      "faxNumber": null,
+      "geolocation": {
+        "type": "Point",
+        "coordinates": [
+          -122.0322911,
+          37.2586593
+        ]
+      },
+      "hours": {
+        "zone": "America/Los_Angeles",
+        "local": [
+          {
+            "start": 6420,
+            "end": 6960
+          },
+          {
+            "start": 7860,
+            "end": 8400
+          },
+          {
+            "start": 660,
+            "end": 1140
+          },
+          {
+            "start": 2100,
+            "end": 2580
+          },
+          {
+            "start": 3540,
+            "end": 4020
+          },
+          {
+            "start": 4980,
+            "end": 5460
+          },
+          {
+            "start": 9300,
+            "end": 9780
+          }
+        ],
+        "special": [],
+        "eastern": [
+          {
+            "start": 6600,
+            "end": 7140
+          },
+          {
+            "start": 8040,
+            "end": 8580
+          },
+          {
+            "start": 840,
+            "end": 1320
+          },
+          {
+            "start": 2280,
+            "end": 2760
+          },
+          {
+            "start": 3720,
+            "end": 4200
+          },
+          {
+            "start": 5160,
+            "end": 5640
+          },
+          {
+            "start": 9480,
+            "end": 9960
+          }
+        ],
+        "offset": -180
+      },
+      "region": "cupertino_ca",
+      "pod": "",
+      "tags": [],
+      "taxRate": 9.13,
+      "specifyTaxRateByFulfillment": false,
+      "taxRateDineIn": 0,
+      "taxRatePickup": 0,
+      "taxRateDelivery": 0,
+      "isLive": false,
+      "tabletOffline": false,
+      "isOpen": false,
+      "payInStore": false,
+      "onlineOrderingEnabled": true,
+      "aboutUs": "",
+      "imageContent": [],
+      "socialMediaPages": [],
+      "kioskPreferences": {
+        "attractScreenUrl": "https://res.cloudinary.com/ddhetmqtt/video/upload/v1756252099/rdb-assets/oll2ot50rygp1qylohjb.mov",
+        "customWayfindingMessage": null
+      },
+      "registerRewardsEnabled": true,
+      "tipImageUrl": "",
+      "productCategories": [
+        {
+          "name": "Creme Brulee",
+          "productIds": [
+            "685afa0206341c72cb157a7c",
+            "685afb028784f63935ae41f7",
+            "685afb195a0a9b4f16ec4e84",
+            "685afb303fc877b70bbb98e2",
+            "685afb4e2349389b79451b1f"
+          ],
+          "isArchived": null,
+          "_id": "685afa0da35d1ccd8b020e00"
+        },
+        {
+          "name": "Brown Sugar",
+          "productIds": [
+            "685afb80a35d1ccd8b0288fa",
+            "685afc0d5a0a9b4f16ecd48a",
+            "685afcb5f0ca531a2a495f6d",
+            "685afcd4cb4e107b441d5d45",
+            "6893ae6573d66131ea8888f7",
+            "6895281d3eb7221441e7d32e"
+          ],
+          "isArchived": null,
+          "_id": "685afb80a35d1ccd8b02891f"
+        },
+        {
+          "name": "Milk Tea",
+          "productIds": [
+            "685afdf8f93ff013d8ced70a",
+            "685afe4307437768cc6fab3f",
+            "688bc88e1e719335281bb3d6",
+            "685aff948f1b7b9df65d68ec",
+            "685afe825a0a9b4f16edd74a",
+            "6893aeb504f7f1838aa8249c",
+            "6893ea3e3436e944cbb51022",
+            "6895062544bc839c8df9b7c5",
+            "6895069912bf50e69df0eaa6",
+            "68950893db00c81a2a63456c",
+            "689672ca4af71a1401f07243"
+          ],
+          "isArchived": null,
+          "_id": "685afdf8f93ff013d8ced73e"
+        },
+        {
+          "name": "Premium Tea",
+          "productIds": [
+            "685affe45df7267355b23e0a",
+            "685b0008cb4e107b441ec7ff",
+            "688bc9014c34c9e7bee6c251",
+            "688bc96090b48417553405d6",
+            "6893afacff118845173f4327"
+          ],
+          "isArchived": null,
+          "_id": "685affe45df7267355b23e47"
+        },
+        {
+          "name": "Smoothie",
+          "productIds": [
+            "685b004a06341c72cb17e227",
+            "685b14c85df7267355baf6d6",
+            "685c210306341c72cb8d0ce3",
+            "685c214a9de2b777d623c06d",
+            "685c218c8aa51fc95b54e960",
+            "685c21b6cf6c5783222182e4",
+            "685c21f25424112c9ad4d1ed",
+            "685b146a1cac07c3ff92a985",
+            "685c22215f9905e55675a596",
+            "685c225acf6c57832221bc70",
+            "685c2285a35d1ccd8b79c976",
+            "685b14509d31633ad51d5b1d",
+            "685b148acbcbfbd1e03f115f",
+            "685c22a65424112c9ad508b6",
+            "685b14a81cac07c3ff92d9b9",
+            "685c22e6111f2844aed6c7c0",
+            "6a51617c322d479ddba0666e"
+          ],
+          "isArchived": null,
+          "_id": "685b004a06341c72cb17e243"
+        },
+        {
+          "name": "Slushy",
+          "productIds": [
+            "685c23c98aa51fc95b55da25",
+            "685c24ce8f1b7b9df6d3da10",
+            "685c24ed8aa51fc95b567943",
+            "685c242a5f9905e55676618d",
+            "685c249c4953b6e3b40a732f",
+            "685c25150a695fd889655cc8",
+            "685c253ddddb128a0607189e",
+            "685c2464111f2844aed75a1f",
+            "685c248078478f56f4832253",
+            "6a04c92e7649f3041f05afe0"
+          ],
+          "isArchived": null,
+          "_id": "685c23c98aa51fc95b55da41"
+        },
+        {
+          "name": "Fruit Series",
+          "productIds": [
+            "685c25b9111f2844aed7f04f",
+            "685c25c9cb4e107b449476ab",
+            "688c526d7a4f40902bcb16cb",
+            "685c25e14953b6e3b40b1b9a",
+            "685c2605c10ecc14c61ad596",
+            "685c261ad2a67f03bcc7d528",
+            "685c2632f0ca531a2ac18d71",
+            "685c264f9de2b777d625eca1",
+            "68953d1f12bf50e69d0b3181",
+            "68953e49dc9cbac9d77c9506",
+            "68969337d6fd93117e029a4a"
+          ],
+          "isArchived": null,
+          "_id": "685c25b9111f2844aed7f074"
+        },
+        {
+          "name": "Matcha/Latte Collection",
+          "productIds": [
+            "685c29d006341c72cb908d2c",
+            "685c2a339de2b777d62772c6",
+            "688c2f1bb218b1ff79c2ec7f",
+            "685c2ae5f0ca531a2ac39d58",
+            "685c2a214d0b9365db98cfcb",
+            "688e5f06966fbbb9da12ffc9",
+            "6894f71fea8c7f731fb0497d",
+            "688e5f50d5d0f215e198e28a",
+            "68a77f508b2bcbb75434e4e0",
+            "68c1def7f31a8b9c9cf17974"
+          ],
+          "isArchived": null,
+          "_id": "685c29d006341c72cb908d55"
+        },
+        {
+          "name": "Milk",
+          "productIds": [
+            "685c2d215f99ef772851509e",
+            "685c2d1378478f56f4870709",
+            "685c2d2b8f1b7b9df6d77aed",
+            "685c2d4bcf6c57832226afa5",
+            "685c2d57d2a67f03bccaf444",
+            "685c2d72cf6c57832226c9ba",
+            "685c2d7ecf6c57832226cdc2",
+            "68966c2c2a47cf72854bbf24",
+            "689675c0f365956572c87a42",
+            "689675d8d6fd93117ef40dbb",
+            "68b8c8c3b4bb97a579d7434b",
+            "698f92466e577af96f76cf6c"
+          ],
+          "isArchived": null,
+          "_id": "685c2d1378478f56f487072e"
+        },
+        {
+          "name": "Butterfly Tea",
+          "productIds": [
+            "685c30538784f639352b0c84",
+            "685c31a5d2a67f03bcccf66a",
+            "685c306606341c72cb93aff0",
+            "685c3098f0ca531a2ac61ab6",
+            "685c303dd2a67f03bccc57d3",
+            "685c307f9de2b777d62a2778",
+            "6894f769a3c43de23f048667",
+            "689fb243a413dc7d1ba5c068"
+          ],
+          "isArchived": null,
+          "_id": "685c303dd2a67f03bccc57f8"
+        },
+        {
+          "name": "Coffee/Creamy Coffee",
+          "productIds": [
+            "685c3c3d66e3fce780cd16e1",
+            "685c3c804d0b9365dba09339",
+            "685c3ca25f9905e5568127c3",
+            "685c3ccecf6c5783222d5803",
+            "68952620831ed998a124fcb1",
+            "685c3ce7d2a67f03bcd1b0b2",
+            "685c3d247355fa9b8e18c919",
+            "688e60d5d443ec94073e159e",
+            "685c3d0578478f56f48e1b81",
+            "688e5fdfef26305697f7f2f3",
+            "688e602dd5d0f215e1996635",
+            "689514064a0c1c61e528cf0f",
+            "6a04c6bbd5f53df7d135420e"
+          ],
+          "isArchived": null,
+          "_id": "685c3c3d66e3fce780cd1704"
+        },
+        {
+          "name": "Munch/Desserts",
+          "productIds": [
+            "694332b6416d86bc652dff82",
+            "69433334741b4c9e9f3015cf",
+            "688e61635d3c1beffea3cda3",
+            "685c3ea6eeb6c23c536986c8",
+            "685c3ec006341c72cb99e5c7",
+            "688e6211b98ff639e86013f9",
+            "688e6258d443ec94073ec778",
+            "685c3efc7355fa9b8e19a355",
+            "6893c80b4769902ecff4c3ea",
+            "6893c8f3ff118845174ae644",
+            "6894fa3ba226689fc5a8588c",
+            "6955704711c4d1825e77a0f9",
+            "69938ba42ea7c9f8c999ffb2",
+            "6a3ec8c54e300f4d153a39b2",
+            "6a3ec8efe4dc4c75af488036"
+          ],
+          "isArchived": null,
+          "_id": "685c3ea6eeb6c23c536986e1"
+        },
+        {
+          "name": "Saratoga Fundraiser",
+          "productIds": [
+            "6926395aa55c4b003022fdfa"
+          ],
+          "isArchived": null,
+          "_id": "6926395aa55c4b003022fdfc"
+        },
+        {
+          "name": "Gift Cards",
+          "productIds": [
+            "688d251114083a60176bb274",
+            "688d2513b98ff639e8d6fff6"
+          ],
+          "isArchived": null,
+          "specialProductCategory": "GIFT_CARD",
+          "_id": "69581181794c854d7ee2ecfb"
+        },
+        {
+          "name": "Instant Noodles",
+          "productIds": [
+            "69277e098be87b3b70f22b30",
+            "691e1028dcfced2192ca26fd",
+            "691e0fdc186c22d3bdf0a061",
+            "690ba4d55c1d297e2ee0a84e",
+            "690ba33cde5b0b8cce8d4330",
+            "697136c05b0455388ba41a72",
+            "6977f2e32b1466e932e82b20"
+          ],
+          "isArchived": null,
+          "_id": "695c3af45030c16836bb7045"
+        }
+      ],
+      "pictureMenuProductIds": [],
+      "comingSoon": false,
+      "coverPhoto": null,
+      "rushHourUntil": null,
+      "rushHourDelay": 0,
+      "showTipOnPickup": true,
+      "showNoTip": false,
+      "noNotes": false,
+      "notes": "",
+      "pickupMin": null,
+      "catering": {
+        "allowDelivery": false,
+        "orderMinimum": 0,
+        "minLeadTime": 48,
+        "productCategories": [],
+        "email": null,
+        "enabled": false,
+        "createdAt": "2025-06-11T22:45:15.197Z",
+        "updatedAt": "2025-06-11T22:45:15.197Z"
+      },
+      "cateringEnabled": false,
+      "thumbnailUrl": "https://res.cloudinary.com/ddhetmqtt/image/upload/v1749844832/store-images/vgcig2iwbfw37ibm0eny.jpg",
+      "logoUrl": "https://res.cloudinary.com/ddhetmqtt/image/upload/v1749840315/store-images/x81lnrchbppfx7rmiqz7.jpg",
+      "scheduledOrderMinLeadTime": 0,
+      "chainId": "6876cf679add56291960306c",
+      "chainConfig": [
+        {
+          "feature": "CHAIN_WIDE_PUNCHCARD",
+          "enabledDate": "2025-08-01T20:37:01.446Z",
+          "_id": "688d256dcf4052cb4a07c3fd"
+        }
+      ],
+      "customFeePolicies": [],
+      "feePolicies": [],
+      "pickupDirections": null,
+      "scheduledOrderPosTriggerTime": 30,
+      "referralChannels": [
+        "684c727813b11f6ffb990d5a",
+        "684c72787da00757503e79ef",
+        "68892a51a2dca0b02da0b2af"
+      ],
+      "hasPickupNow": true,
+      "menuNotes": "",
+      "accountManager": null,
+      "accountExecutive": null,
+      "referralConversionText": "",
+      "allowViewEarningsOnTablet": true,
+      "defaultTip": {
+        "defaultTipType": "PERCENT",
+        "defaultTips": [
+          10,
+          15,
+          20,
+          25
+        ],
+        "defaultTipValue": 20
+      },
+      "defaultBagInCart": 0,
+      "collectTip": true,
+      "orderStatusConfiguration": 1,
+      "notifyOnFirstOrder": false,
+      "pickupTimeType": "range",
+      "defaultPickupTime": 0,
+      "defaultPickupMinTime": 1,
+      "defaultPickupMaxTime": 5,
+      "slug": "teazenteasaratoga",
+      "addressComponents": {
+        "line1": "14410 Big Basin Wy",
+        "line2": "",
+        "city": "Saratoga",
+        "county": "Santa Clara County",
+        "state": "CA",
+        "zip": "95070",
+        "country": "USA",
+        "full": "14410 Big Basin Wy d, Saratoga, CA 95070, USA",
+        "_id": "696e873704d031c1cbaa42cd"
+      },
+      "isArchived": false,
+      "hasPhysicalGiftCardEverBeenEnabled": true,
+      "brandCustomerPickupScreenMarketingUrl": "",
+      "brandColor": "#47d75f",
+      "brandSplashUrl": "https://res.cloudinary.com/ddhetmqtt/image/upload/v1749840472/rdb-assets/fwgt4fvilbhogyg1ohh9.jpg",
+      "loyaltyCardBackgroundImage": "https://res.cloudinary.com/ddhetmqtt/image/upload/v1749840413/store-images/aweuuqwyyhvjbwbokqex.jpg",
+      "primaryImage": null,
+      "secondaryImage": null,
+      "hideBrandingImagesOnOO": false,
+      "skipOtherPaymentConfirmation": false,
+      "smartReceiptCustomerMessage": null,
+      "waitTimeType": "MANUAL",
+      "useMulMenu": false,
+      "useCorporateMap": false,
+      "mapIcon": "https://res.cloudinary.com/ddhetmqtt/image/upload/v1749840489/store-images/qhic8yxuxccciqq8kali.jpg",
+      "disablePopularSectionOnOO": false,
+      "kind": "brick_and_mortar",
+      "externalReviewUrl": null,
+      "customFeeLabels": {
+        "snackpassConvenienceLabel": null,
+        "snackpassConvenienceDescription": null,
+        "convenienceStoreLabel": null,
+        "convenienceStoreDescription": null,
+        "tipLabelPrefix": ""
+      },
+      "storeDelivers": false,
+      "disableDefaultMenu": false,
+      "_id": "684a06fbec547d5424f1a73d"
+    },
+    {
+      "name": "TeaZenTea (San Jose, 422 W Capitol Expy)",
+      "phoneNumber": "+14086225577",
+      "address": "422 W Capitol Expy,Ste C, San Jose, CA 95136, USA",
+      "color": "#47d75f",
+      "emoji": "🧋",
+      "closedUntil": null,
+      "hasConvenienceFee": false,
+      "convenienceFee": 0,
+      "convenienceFeePolicies": [
+        {
+          "transactionSource": "app",
+          "value": 0
+        },
+        {
+          "transactionSource": "kiosk",
+          "value": 0
+        },
+        {
+          "transactionSource": "online",
+          "value": 0
+        }
+      ],
+      "delivery": true,
+      "deliveryFee": 0,
+      "deliveryMin": 0,
+      "deliveryTime": null,
+      "deliveryRanges": [
+        {
+          "deliveryFee": 0,
+          "deliveryMin": 0,
+          "start": 0,
+          "end": 5,
+          "feePolicies": [
+            {
+              "name": "3P_DELIVERY_FEE",
+              "description": null,
+              "payer": "customer",
+              "recipient": "snackpass",
+              "flat": 5.99,
+              "percent": 0,
+              "isTaxable": true
+            }
+          ],
+          "_id": "690bc8a5d4bdf692e997a5b5"
+        }
+      ],
+      "hasSpecialDeliveryHours": false,
+      "hasScheduledOrders": true,
+      "hasBatching": false,
+      "hasGiftCardsEnabled": true,
+      "scheduleAheadInterval": 15,
+      "scheduleAheadBatchSize": 10,
+      "scheduleAheadFirstTimeSlotBuffer": 15,
+      "specialDeliveryHours": null,
+      "dineInPreferences": {
+        "hasDineIn": false,
+        "serviceType": null,
+        "directions": null,
+        "requireTableNumber": false
+      },
+      "pickup": true,
+      "deliveryOnlyEmail": "",
+      "faxNumber": null,
+      "geolocation": {
+        "type": "Point",
+        "coordinates": [
+          -121.8506057,
+          37.2739938
+        ]
+      },
+      "hours": {
+        "zone": "America/Los_Angeles",
+        "local": [
+          {
+            "start": 660,
+            "end": 1380
+          },
+          {
+            "start": 2100,
+            "end": 2820
+          },
+          {
+            "start": 3540,
+            "end": 4260
+          },
+          {
+            "start": 4980,
+            "end": 5700
+          },
+          {
+            "start": 6420,
+            "end": 7140
+          },
+          {
+            "start": 7860,
+            "end": 8580
+          },
+          {
+            "start": 9300,
+            "end": 10020
+          }
+        ],
+        "special": [
+          {
+            "date": "2026-07-17T11:25:47.794Z",
+            "start": 540,
+            "end": 660
+          }
+        ],
+        "eastern": [
+          {
+            "start": 840,
+            "end": 1560
+          },
+          {
+            "start": 2280,
+            "end": 3000
+          },
+          {
+            "start": 3720,
+            "end": 4440
+          },
+          {
+            "start": 5160,
+            "end": 5880
+          },
+          {
+            "start": 6600,
+            "end": 7320
+          },
+          {
+            "start": 8040,
+            "end": 8760
+          },
+          {
+            "start": 0,
+            "end": 121
+          },
+          {
+            "start": 9480,
+            "end": 10079
+          }
+        ],
+        "offset": -180
+      },
+      "region": "san_jose_ca",
+      "pod": "",
+      "tags": [],
+      "taxRate": 10,
+      "specifyTaxRateByFulfillment": false,
+      "taxRateDineIn": 0,
+      "taxRatePickup": 0,
+      "taxRateDelivery": 0,
+      "isLive": false,
+      "tabletOffline": false,
+      "isOpen": true,
+      "payInStore": false,
+      "onlineOrderingEnabled": true,
+      "aboutUs": "",
+      "imageContent": [],
+      "socialMediaPages": [],
+      "kioskPreferences": {
+        "attractScreenUrl": "https://res.cloudinary.com/ddhetmqtt/video/upload/v1749840222/rdb-assets/y9dyeqq14si3gcsgcpgz.mov",
+        "customWayfindingMessage": null
+      },
+      "registerRewardsEnabled": true,
+      "tipImageUrl": "",
+      "productCategories": [
+        {
+          "name": "Seasonal",
+          "productIds": [
+            "6a42ec4561876b9e73de3826",
+            "6a2a0e6df44f6a5f9e45cf40",
+            "6a2a0ed2bc38e06cbf4f9cb9",
+            "6a2a0ef9d6c04d61e6c2150b",
+            "6a2a0dfa120f24a5d46ce3d2",
+            "6a2a0f425472254e41df70be",
+            "6a42ec16121534baf1ac81e7",
+            "6a42ecad521843ebfb265eb3",
+            "6a97d9fdf160a41952a3c7e0"
+          ],
+          "isArchived": null,
+          "_id": "6a2a0dfa120f24a5d46ce3ee"
+        },
+        {
+          "name": "Spring Collection",
+          "productIds": [
+            "69f6ea9ff47cebae155d5b7d",
+            "69f6eae98b42d478655c9e1d",
+            "69f6eb448b42d478655cb8d4",
+            "69f6ea488b42d478655c6f96",
+            "69f6e9e4f47cebae155d0761"
+          ],
+          "isArchived": null,
+          "_id": "69f6e9e4f47cebae155d078b"
+        },
+        {
+          "name": "Lover Story",
+          "productIds": [
+            "69900a420cf0a2747d7819ed",
+            "69900ac517b2df4e8a042efd",
+            "69900aebdb55863731cd0789",
+            "69900b1cd409c2ca3d6d40c1"
+          ],
+          "isArchived": null,
+          "_id": "69900a420cf0a2747d781a0c"
+        },
+        {
+          "name": "Brulee Ribbon Series",
+          "productIds": [
+            "693659240ddf670c52b4cdfc",
+            "6936589197cee58eafd7dcfe",
+            "693659582c0d13fffa097cb3",
+            "6936597c7b30a6ac07e49971",
+            "693659ad78ba6068f0c09e77"
+          ],
+          "isArchived": null,
+          "_id": "6936589197cee58eafd7dd1a"
+        },
+        {
+          "name": "HydroCoco Energy",
+          "productIds": [
+            "68c18cc84c8e5ab1245a1e95",
+            "689bbb3f36e7fdfb384d3369",
+            "689bbb85ac0267edfe55f835"
+          ],
+          "isArchived": null,
+          "_id": "689bbb3f36e7fdfb384d338d"
+        },
+        {
+          "name": "Every Day Love",
+          "productIds": [
+            "689bbd05547e102eaf02db1b",
+            "689bbed1c534825ff5ec803f",
+            "689bbe4e391a4ad6e841dda3",
+            "689bbca1f9a18da1a1f8d509",
+            "689bbdcef4ff399f7b47e6d5",
+            "689bbd571cac9e3839d17860",
+            "689bbef91498e00de356e4b3"
+          ],
+          "isArchived": null,
+          "_id": "689bbca1f9a18da1a1f8d515"
+        },
+        {
+          "name": "Creme Brulee",
+          "productIds": [
+            "685a9b47d76a27e6c6c72de8",
+            "685a9d70d76a27e6c6c7f321",
+            "685a9d82a74b0e718f1905a0",
+            "685a9ec64af1e48621087026"
+          ],
+          "isArchived": null,
+          "_id": "685a9b47d76a27e6c6c72e09"
+        },
+        {
+          "name": "Brown Sugar",
+          "productIds": [
+            "685a9ee54af1e48621087b37",
+            "685a9eff899c3b3fd707cce7",
+            "685a9f23089672d84918b19a",
+            "685a9f3a999b7d64ea089ef5",
+            "691a3aca8c0dd98bd661e627"
+          ],
+          "isArchived": null,
+          "_id": "685a9ee64af1e48621087b58"
+        },
+        {
+          "name": "Milk Tea/Milk",
+          "productIds": [
+            "685aa03d089672d849192ece",
+            "685aa0b952ba8440efd1c0ce",
+            "685aa1c2899c3b3fd708c569",
+            "685aa0e152ba8440efd1cdf9",
+            "688ffcf8cdf969b483d60be6",
+            "688ffca23f44f28f7ad9d588",
+            "688ffcd3a7d73c13c68b6714",
+            "688ffacd5d3c1beffe58fdba",
+            "688ffe928e5ee45da2d53b2b",
+            "688ffec2cdf969b483d70103",
+            "688fff1ea7d73c13c68cd8d9",
+            "688fff3b0a46b5b2513e2e3f",
+            "688ffb95a80ba8e266831544"
+          ],
+          "isArchived": null,
+          "_id": "685aa03d089672d849192f05"
+        },
+        {
+          "name": "Premium Tea",
+          "productIds": [
+            "685aa4c194b13f1b86f2f8d9",
+            "685aa51d52ba8440efd36315",
+            "689004e23f44f28f7ade4291",
+            "689004f712c723e2fb5244dd",
+            "689005087fe2e24aa1769cbb",
+            "689005217fe2e24aa176a5a8",
+            "68900532f86920d5c662299a",
+            "689e1c1b9f253f2f2781a72b",
+            "689e1c264e1625362987231a",
+            "689e1c3575cbc8bd251d7879"
+          ],
+          "isArchived": null,
+          "_id": "685aa4c194b13f1b86f2f91b"
+        },
+        {
+          "name": "Smoothie",
+          "productIds": [
+            "685aab848a7583a0754a7eb1",
+            "685aacafd76a27e6c6cd8f5e",
+            "685aacd4a3a4662d05c1b6fa",
+            "685aacf352ba8440efd63ed4",
+            "6a2a0e8cec286a232cc3a702",
+            "685aad26899c3b3fd70d0fae",
+            "685aad434af1e486210de1ab",
+            "685aad5a94b13f1b86f6034e",
+            "685aabc9a74b0e718f1e1771",
+            "685aad702c5af5ce19f3899d",
+            "685aad892742ebb6169bb6b9",
+            "685aaebfa69cea7cce740657",
+            "685aabae899c3b3fd70c42b3",
+            "685aac814af1e486210d8892",
+            "685aaecf899c3b3fd70dd1f5",
+            "6a363a2a406525a96f27e6a4",
+            "685aac948a7583a0754addc8",
+            "685aaee252ba8440efd7300a"
+          ],
+          "isArchived": null,
+          "_id": "685aab848a7583a0754a7ec8"
+        },
+        {
+          "name": "Slushy",
+          "productIds": [
+            "685aaf1652ba8440efd7435b",
+            "685aafbe52ba8440efd77c99",
+            "685aafd3089672d8491ef049",
+            "685ab0d9d76a27e6c6cf2875",
+            "685aaf468a7583a0754bee27",
+            "685aaf8894b13f1b86f6dae5",
+            "685ab0f6899c3b3fd70e9ad1",
+            "685ab107cafcd66872e2944a",
+            "685aaf5652ba8440efd75937",
+            "685aaf6c52ba8440efd76123"
+          ],
+          "isArchived": null,
+          "_id": "685aaf1652ba8440efd74374"
+        },
+        {
+          "name": "Fruit Series",
+          "productIds": [
+            "685ab14f089672d8491f7c30",
+            "68927ed244c4fd2ade461db1",
+            "685ab1eea3a4662d05c3daff",
+            "685ab1c994b13f1b86f7afb5",
+            "685ab31ea69cea7cce75dad7",
+            "685ab3c02c5af5ce19f627e7",
+            "685ab4d84af1e4862111068b",
+            "685ab55094b13f1b86f92ebc"
+          ],
+          "isArchived": null,
+          "_id": "685ab14f089672d8491f7c65"
+        },
+        {
+          "name": "Matcha/latte Collection",
+          "productIds": [
+            "685ab5cf8a7583a0754ea956",
+            "685ab60b2c5af5ce19f6ff83",
+            "685ab63f9de2b777d6919def",
+            "685ab5e72742ebb6169f22db",
+            "685ab62307437768cc5098b8",
+            "68c7eb45db95f8e865bdf86b",
+            "68df45f6fa16b7aa4674d231"
+          ],
+          "isArchived": null,
+          "_id": "685ab5cf8a7583a0754ea98b"
+        },
+        {
+          "name": "Butterfly Tea",
+          "productIds": [
+            "685abc152f7471b90318466f",
+            "685abcb9cf6c578322904d9d",
+            "685abc2f4d0b9365db03747c",
+            "685abc611cac07c3ff6d402f",
+            "685abbb02f7471b9031825cb",
+            "685abc4e2f7471b9031856f1"
+          ],
+          "isArchived": null,
+          "_id": "685abbb02f7471b9031825ed"
+        },
+        {
+          "name": "Coffee/Creamy Coffee",
+          "productIds": [
+            "685abd5d9de2b777d6945918",
+            "685abd7ac4f03e60a1517e27",
+            "685abe5b4d0b9365db04490b",
+            "685abda9c4f03e60a1519f28",
+            "685abcf15a0a9b4f16d16231",
+            "685abde3cf6c57832290dbfc",
+            "685abe8f9de2b777d694d6b5",
+            "685abe6f5a0a9b4f16d1fe67",
+            "685abe83013ab242185e4e9a",
+            "68c7eb39f683178e037e6916"
+          ],
+          "isArchived": null,
+          "_id": "685abcf25a0a9b4f16d16271"
+        },
+        {
+          "name": "Quick Bites/Deserts",
+          "productIds": [
+            "694c34373c5203450f22ca6a",
+            "6938e20c040e0fe130c35615",
+            "6938e2a61b2488ddf624d5cc",
+            "685bfe508784f6393515d7ad",
+            "689284f8bfc0bd6e84556436",
+            "6892846744c4fd2ade48bded",
+            "685bfecd8784f6393515ffba",
+            "689285eb0f9c5cc255c5e31d",
+            "689285957f46e1624740b8df",
+            "690419c4315718f03425820a",
+            "68ad22ea86aabb410b3b6dc8",
+            "685c08897355fa9b8e028523",
+            "68b30c848c6fdde5d70604e7",
+            "69a6086559ed1c3ee4f68e75",
+            "69a60c9433a2e4b8e03dc5a7"
+          ],
+          "isArchived": null,
+          "_id": "685bfe197355fa9b8efe44ad"
+        },
+        {
+          "name": "Halloween Series",
+          "productIds": [
+            "68edb793ba6e6ab5300e9967",
+            "68edb7d919662c6d2ef52a03",
+            "68edb802759656786e1963b2",
+            "68edb82a038a8d0ad5ea2107",
+            "68edb865930172543862b399"
+          ],
+          "isArchived": null,
+          "_id": "68edb793ba6e6ab5300e9969"
+        },
+        {
+          "name": "HOUSE SPECIALS",
+          "productIds": [
+            "6a2afd5471d2ea10ed811876",
+            "6a2afdbb44d12955f2cf5d53",
+            "6a2aff1629f9fb6c9572ce15"
+          ],
+          "isArchived": null,
+          "_id": "6a2afd5471d2ea10ed81188a"
+        },
+        {
+          "name": "Gift Cards",
+          "productIds": [
+            "688d25287a4f40902b20bbc9",
+            "688d25295e746cc356641d36"
+          ],
+          "isArchived": null,
+          "specialProductCategory": "GIFT_CARD",
+          "_id": "6a97d9d8ff41ad57c9fcdfb6"
+        }
+      ],
+      "pictureMenuProductIds": [],
+      "comingSoon": false,
+      "coverPhoto": null,
+      "rushHourUntil": null,
+      "rushHourDelay": 0,
+      "showTipOnPickup": true,
+      "showNoTip": false,
+      "noNotes": false,
+      "utensilsPromptEnabled": true,
+      "notes": "⚡ Refresh & Recharge! Try our new HydroCoco Energy Drinks today!",
+      "pickupMin": 0,
+      "catering": {
+        "allowDelivery": false,
+        "orderMinimum": 0,
+        "minLeadTime": 48,
+        "productCategories": [],
+        "email": null,
+        "enabled": false,
+        "createdAt": "2025-06-11T00:51:44.820Z",
+        "updatedAt": "2025-06-11T00:51:44.820Z"
+      },
+      "cateringEnabled": false,
+      "thumbnailUrl": "https://res.cloudinary.com/ddhetmqtt/image/upload/v1749844406/store-images/ep8ljfylrhq7k5m8l2s3.jpg",
+      "logoUrl": "https://res.cloudinary.com/ddhetmqtt/image/upload/v1749840142/store-images/v7txumhd41vymu1vxmhp.jpg",
+      "scheduledOrderMinLeadTime": 0,
+      "chainId": "6876cf679add56291960306c",
+      "chainConfig": [
+        {
+          "feature": "CHAIN_WIDE_PUNCHCARD",
+          "enabledDate": "2025-08-01T20:36:58.839Z",
+          "_id": "688d256a570f809eb1c430e1"
+        }
+      ],
+      "customFeePolicies": [],
+      "feePolicies": [],
+      "pickupDirections": "",
+      "scheduledOrderPosTriggerTime": 30,
+      "referralChannels": [
+        "684c718e7da00757503debda",
+        "684c718e13b11f6ffb98b68a",
+        "68892a63a2f51c77bc29dd4a"
+      ],
+      "hasPickupNow": true,
+      "menuNotes": "",
+      "accountManager": null,
+      "accountExecutive": null,
+      "referralConversionText": "",
+      "allowViewEarningsOnTablet": true,
+      "defaultTip": {
+        "defaultTipType": "PERCENT",
+        "defaultTips": [
+          10,
+          15,
+          20,
+          25
+        ],
+        "defaultTipValue": 20
+      },
+      "defaultBagInCart": 0,
+      "collectTip": true,
+      "orderStatusConfiguration": 1,
+      "notifyOnFirstOrder": false,
+      "pickupTimeType": "range",
+      "defaultPickupTime": 0,
+      "defaultPickupMinTime": 10,
+      "defaultPickupMaxTime": 15,
+      "slug": "teazenteasanjose",
+      "addressComponents": {
+        "line1": "422 W Capitol Expy",
+        "line2": "Ste C",
+        "city": "San Jose",
+        "county": "Santa Clara County",
+        "state": "CA",
+        "zip": "95136",
+        "country": "USA",
+        "full": "422 W Capitol Expy, San Jose, CA 95136, USA",
+        "_id": "6a5a73b9e44b595b35ee0f4f"
+      },
+      "isArchived": false,
+      "hasPhysicalGiftCardEverBeenEnabled": true,
+      "brandCustomerPickupScreenMarketingUrl": "",
+      "brandColor": "#47d75f",
+      "brandSplashUrl": "https://res.cloudinary.com/ddhetmqtt/image/upload/v1759505401/rdb-assets/s27utroppzgfxh3yooyp.png",
+      "loyaltyCardBackgroundImage": "https://res.cloudinary.com/ddhetmqtt/image/upload/v1765834050/store-images/zhqe4cmjyfvbpkufx2yz.jpg",
+      "primaryImage": null,
+      "secondaryImage": null,
+      "hideBrandingImagesOnOO": false,
+      "skipOtherPaymentConfirmation": false,
+      "smartReceiptCustomerMessage": null,
+      "waitTimeType": "MANUAL",
+      "useMulMenu": false,
+      "useCorporateMap": false,
+      "mapIcon": "https://res.cloudinary.com/ddhetmqtt/image/upload/v1749840260/store-images/gvr6ogczcwme5smthhib.jpg",
+      "disablePopularSectionOnOO": false,
+      "kind": "brick_and_mortar",
+      "externalReviewUrl": null,
+      "customFeeLabels": {
+        "snackpassConvenienceLabel": null,
+        "snackpassConvenienceDescription": null,
+        "convenienceStoreLabel": null,
+        "convenienceStoreDescription": null,
+        "tipLabelPrefix": "Tip = Extra happiness in every sip"
+      },
+      "storeDelivers": false,
+      "disableDefaultMenu": false,
+      "_id": "6848d320c5fba77ddaa5f451"
+    }
+  ],
+  "inferredGeo": {
+    "zipcode": "99546",
+    "state_abbr": "AK",
+    "latitude": "51.879570",
+    "longitude": "-176.63675",
+    "city": "Adak",
+    "state": "Alaska",
+    "distance": 8153.66229672708
+  },
+  "success": true
+}

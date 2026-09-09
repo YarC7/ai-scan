@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import { validateAndCorrectLabel, type ExtractedLabel } from '@/lib/validateLabel'
 
 export async function POST(request: Request) {
   const apiKey = process.env.NVIDIA_API_KEY
@@ -23,7 +24,7 @@ export async function POST(request: Request) {
       messages: [
         {
           role: 'system',
-          content: `You are a data-extraction assistant for boba tea order labels. You will be given a photo of a printed order label. Extract structured data following these rules:
+          content: `You are a data-extraction assistant for TeaZenTea boba tea order labels. You will be given a photo of a printed order label. Extract structured data following these rules:
 
 LABEL STRUCTURE:
 - Line 1: order identifier (e.g. "SP #190 Delivery" or "Kiosk #176 Pickup"), often followed by a page indicator like "1/2".
@@ -31,13 +32,21 @@ LABEL STRUCTURE:
 - Line 3 (bold, may wrap to 2 lines): the drink/item name.
 - Remaining lines: modifiers, comma-separated, possibly across multiple lines.
 
-MODIFIER RULES:
-- Each modifier string belongs to exactly ONE category: Topping, Sweet, Ice, Tea Base, Milk Base (there may be others not listed here — classify by meaning, not just this list).
-- The SAME modifier text never appears in more than one category (e.g. "Boba" is always Topping, never Sweet).
-- A modifier may have a quantity prefix like "2x Boba" — extract the base name and quantity separately.
-- Order of modifiers on the label reflects customer selection order, NOT category order. Do not assume position implies category.
-- If text looks like a print/scan artifact (blur, dropped letter, doubled letter — e.g. "Nutel a" for "Nutella"), correct it to the most likely intended word using common boba tea terminology, and record the correction in "notes".
-- Never invent a modifier that isn't visibly present or a clear correction of visible text.
+CRITICAL — DO NOT CONFUSE PAGE INDICATOR WITH MODIFIER QUANTITY:
+- The page indicator (format "N/M", e.g. "1/2", "2/2") appears ONLY on the first line, next to or below the order identifier (e.g. "Kiosk #176 Pickup ... 2/2"). It means "this is label N of M total labels for this order" — it is NEVER part of any modifier and must NEVER be attached to a topping/modifier as a quantity.
+- A modifier quantity ONLY exists when the label explicitly shows a number directly attached to a modifier word using the pattern "Nx <modifier>" (e.g. "2x Boba") appearing in the modifier section (after the drink name), not in the header section.
+- If you do not see "Nx" written immediately before a modifier word IN THE MODIFIER LINES, assume quantity = 1. Do not infer quantity from any number elsewhere on the label.
+- Treat the header block (order id, page indicator, customer name) and the body block (drink name + modifiers) as fully separate — numbers from the header must never populate any field under "modifiers".
+
+KNOWN MODIFIER CATEGORIES AND VALID VALUES (ground truth — use this to classify, not general knowledge):
+- Topping: Boba, Double Boba, Light Boba, Crystal Boba, Jelly - Coffee, Jelly - Lychee, Jelly - Mango Star, Jelly - Sakura Pink Heart, Popping Lychee, Popping Mango, Popping Strawberry, Creme Brulee, Herbal/Grass, Pudding, Foam - Egg Foam, Foam - Matcha, Foam - Sea Salt Cheese Crema, Foam - Tiramisu, Foam - Ube Taro, Extra Shot of Coffee, Extra Shot of Matcha
+- Sweetness: Regular Sugar, 75% Sweet, 50% Sweet, 25% Sweet, None Sweet, Extra Sweet, 100% Sweet
+- Ice: Regular Ice, Less Ice, Extra Ice, None Ice
+- Tea Flavor (only for Green Tea/Black Tea/Milk base items): Classic/No Flavor, Chocolate, Coconut, Coffee, Dragon Fruit, Honeydew, Honey, Honey Lemon, Lychee, Mango, Matcha, Mocha, Passion Fruit, Peach, Pineapple, Rose, Strawberry, Taro, Watermelon
+
+IMPORTANT: there is no separate "Milk Base" or "Tea Base" modifier — that information is already part of the drink_name itself (e.g. "Black Milk Tea", "Green Tea"). Do not invent a milk_base or tea_base field.
+
+A term never appears in more than one category above — if you read something that isn't an exact or near-exact match to one of these lists, treat it as a likely OCR/print error and correct to the closest valid value, noting the correction in "notes".
 
 OUTPUT FORMAT — return ONLY valid JSON, no markdown fences, no commentary:
 
@@ -50,8 +59,7 @@ OUTPUT FORMAT — return ONLY valid JSON, no markdown fences, no commentary:
     "topping": [{"name": string, "quantity": number}],
     "sweet": string | null,
     "ice": string | null,
-    "tea_base": string | null,
-    "milk_base": string | null
+    "tea_flavor": string | null
   },
   "unrecognized_text": [string],
   "confidence": "high" | "medium" | "low",
@@ -89,8 +97,15 @@ Missing category → null (or [] for topping).`,
   try {
     // strip markdown fences if present
     const cleaned = raw.replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/i, '').trim()
-    const label = JSON.parse(cleaned)
-    return NextResponse.json(label)
+    const parsed = JSON.parse(cleaned)
+
+    // validate + fuzzy-correct against real menu data
+    const { label, corrections, warnings } = validateAndCorrectLabel(parsed as ExtractedLabel)
+
+    return NextResponse.json({
+      ...label,
+      _validation: { corrections, warnings },
+    })
   } catch {
     return NextResponse.json({ error: 'Failed to parse AI response', raw }, { status: 502 })
   }

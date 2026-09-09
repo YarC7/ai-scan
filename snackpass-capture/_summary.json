@@ -1,0 +1,22 @@
+[
+  {
+    "url": "https://api.snackpass.co/api/v4/stores/online/slug/teazenteabrentwood?attemptAsIdIfNotFound=true",
+    "filename": "snackpass-capture\\1788928273292-https___api_snackpass_co_api_v4_stores_online_slug_teazenteabrentwood_attemptAsIdIfNotFound_true.json",
+    "bytes": 20759
+  },
+  {
+    "url": "https://api.snackpass.co/api/v4/stores/6848d33eee23105a54b0d933/promotion-summary?type=DEAL,DISCOUNT,REWARD,GIFT_CARD&limit=10",
+    "filename": "snackpass-capture\\1788928274023-pi_v4_stores_6848d33eee23105a54b0d933_promotion_summary_type_DEAL_DISCOUNT_REWARD_GIFT_CARD_limit_10.json",
+    "bytes": 19858
+  },
+  {
+    "url": "https://api.snackpass.co/api/v4/menus/active/raw?storeId=6848d33eee23105a54b0d933&channel=%40snackpass%2Fonline-ordering",
+    "filename": "snackpass-capture\\1788928275008-s_co_api_v4_menus_active_raw_storeId_6848d33eee23105a54b0d933_channel__40snackpass_2Fonline_ordering.json",
+    "bytes": 513268
+  },
+  {
+    "url": "https://api.snackpass.co/api/v4/stores/nearby?chainId=6876cf679add56291960306c&inferLocation=true&onlineOrderingEnabled=true",
+    "filename": "snackpass-capture\\1788928275176-_api_v4_stores_nearby_chainId_6876cf679add56291960306c_inferLocation_true_onlineOrderingEnabled_true.json",
+    "bytes": 53488
+  }
+]

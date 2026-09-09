@@ -1,9 +1,13 @@
+export interface ToppingItem {
+  name: string
+  quantity: number
+}
+
 export interface Modifiers {
-  topping: { name: string; quantity: number }[]
+  topping: ToppingItem[]
   sweet: string | null
   ice: string | null
-  tea_base: string | null
-  milk_base: string | null
+  tea_flavor: string | null
 }
 
 export interface OrderLabel {
