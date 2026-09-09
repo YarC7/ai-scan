@@ -2,9 +2,9 @@ import { NextResponse } from 'next/server'
 import { validateAndCorrectLabel, type ExtractedLabel } from '@/lib/validateLabel'
 
 export async function POST(request: Request) {
-  const apiKey = process.env.NVIDIA_API_KEY
+  const apiKey = process.env.GROQ_API_KEY
   if (!apiKey) {
-    return NextResponse.json({ error: 'Missing NVIDIA_API_KEY in .env.local' }, { status: 500 })
+    return NextResponse.json({ error: 'Missing GROQ_API_KEY in .env.local' }, { status: 500 })
   }
 
   const { dataUrl } = await request.json()
@@ -13,14 +13,14 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Missing dataUrl' }, { status: 400 })
   }
 
-  const response = await fetch('https://integrate.api.nvidia.com/v1/chat/completions', {
+  const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
     method: 'POST',
     headers: {
       Authorization: `Bearer ${apiKey}`,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      model: 'meta/muse-glimmer-30b',
+      model: 'qwen/qwen3.8-27b',
       messages: [
         {
           role: 'system',
