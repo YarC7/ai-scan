@@ -83,6 +83,21 @@ Missing category → null (or [] for topping).`,
     const errText = await response.text().catch(() => '')
     let errBody
     try { errBody = JSON.parse(errText) } catch { errBody = { error: errText || `API error ${response.status}` } }
+
+    if (response.status === 429) {
+      const waitSeconds = parseRetryWaitSeconds(response.headers.get('retry-after'), errBody)
+      return NextResponse.json(
+        {
+          error: 'Too many requests — the AI service is rate limited. Please retry once the countdown ends.',
+          retryAfterSeconds: waitSeconds,
+        },
+        {
+          status: 429,
+          headers: waitSeconds !== null ? { 'Retry-After': String(waitSeconds) } : {},
+        },
+      )
+    }
+
     return NextResponse.json(errBody, { status: response.status })
   }
 
@@ -107,4 +122,35 @@ Missing category → null (or [] for topping).`,
   } catch {
     return NextResponse.json({ error: 'Failed to parse AI response', raw }, { status: 502 })
   }
+}
+
+// Groq 429s carry the wait time in a `Retry-After` header (seconds) and/or in the
+// error message ("Please try again in 13.765714285s"). Prefer the header, fall
+// back to the message. Returns whole seconds, rounded up, or null if unknown.
+function parseRetryWaitSeconds(retryAfterHeader: string | null, errBody: unknown): number | null {
+  if (retryAfterHeader) {
+    const fromHeader = Number(retryAfterHeader)
+    if (Number.isFinite(fromHeader) && fromHeader >= 0) return Math.ceil(fromHeader)
+    const date = Date.parse(retryAfterHeader)
+    if (!Number.isNaN(date)) return Math.max(0, Math.ceil((date - Date.now()) / 1000))
+  }
+
+  const message: unknown =
+    typeof errBody === 'object' && errBody !== null && 'error' in errBody
+      ? (errBody as { error: unknown }).error
+      : errBody
+  const text =
+    typeof message === 'string'
+      ? message
+      : typeof message === 'object' && message !== null && 'message' in message
+        ? String((message as { message: unknown }).message)
+        : ''
+
+  const match = text.match(/try again in\s+([\d.]+)\s*s/i)
+  if (match) {
+    const seconds = Number(match[1])
+    if (Number.isFinite(seconds) && seconds >= 0) return Math.max(1, Math.ceil(seconds))
+  }
+
+  return null
 }

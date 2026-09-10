@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import { scanLabel } from '@/lib/api'
+import { RateLimitError, scanLabel } from '@/lib/api'
 import type { OrderLabel } from '@/lib/types'
 import { loadHistory, saveToHistory, clearHistory, exportCSV, exportPDF } from '@/lib/export'
 
@@ -9,41 +9,67 @@ type State =
   | { step: 'idle' }
   | { step: 'loading'; dataUrl: string }
   | { step: 'result'; dataUrl: string; result: OrderLabel }
-  | { step: 'error'; dataUrl: string | null; error: string }
+  | { step: 'error'; dataUrl: string | null; error: string; rateLimited: boolean; retryAfterSeconds: number | null }
 
 export default function App() {
   const [state, setState] = useState<State>({ step: 'idle' })
   const [showRaw, setShowRaw] = useState(false)
   const [history, setHistory] = useState<OrderLabel[]>([])
   const [mounted, setMounted] = useState(false)
+  const [countdown, setCountdown] = useState<number | null>(null)
 
   useEffect(() => {
     setHistory(loadHistory())
     setMounted(true)
   }, [])
+
+  useEffect(() => {
+    if (countdown === null) return
+    if (countdown <= 0) {
+      setCountdown(null)
+      return
+    }
+    const t = setTimeout(() => setCountdown((c) => (c === null ? null : c - 1)), 1000)
+    return () => clearTimeout(t)
+  }, [countdown])
+
   const [showHistory, setShowHistory] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
+
+  function runScan(dataUrl: string) {
+    setState({ step: 'loading', dataUrl })
+    scanLabel(dataUrl).then((result) => {
+      setCountdown(null)
+      const updated = saveToHistory(result)
+      setHistory(updated)
+      setState({ step: 'result', dataUrl, result })
+    }).catch((err) => {
+      if (err instanceof RateLimitError) {
+        setCountdown(err.retryAfterSeconds)
+        setState({
+          step: 'error',
+          dataUrl,
+          error: 'Too many requests — the AI service is rate limited.',
+          rateLimited: true,
+          retryAfterSeconds: err.retryAfterSeconds,
+        })
+      } else {
+        const msg = err instanceof Error ? err.message : 'Unknown error'
+        setState({ step: 'error', dataUrl, error: msg, rateLimited: false, retryAfterSeconds: null })
+      }
+    })
+  }
 
   function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0]
     if (!file) return
-    compressImage(file, 1024, 0.7).then(async (dataUrl) => {
-      setState({ step: 'loading', dataUrl })
-      try {
-        const result = await scanLabel(dataUrl)
-        const updated = saveToHistory(result)
-        setHistory(updated)
-        setState({ step: 'result', dataUrl, result })
-      } catch (err) {
-        const msg = err instanceof Error ? err.message : 'Unknown error'
-        setState({ step: 'error', dataUrl, error: msg })
-      }
-    })
+    compressImage(file, 1024, 0.7).then(runScan)
   }
 
   function handleReset() {
     setState({ step: 'idle' })
     setShowRaw(false)
+    setCountdown(null)
     if (inputRef.current) inputRef.current.value = ''
   }
 
@@ -116,18 +142,38 @@ export default function App() {
         <div className="error-state">
           {state.dataUrl && <img src={state.dataUrl} alt="Captured label" className="error-img" />}
           <p className="error-msg">{state.error}</p>
+          {state.rateLimited && countdown !== null && (
+            <div className="rate-limit-notice">
+              <div className="countdown-ring">
+                <svg width="64" height="64" viewBox="0 0 64 64">
+                  <circle cx="32" cy="32" r="28" fill="none" stroke="var(--border)" strokeWidth="4" />
+                  <circle
+                    cx="32" cy="32" r="28" fill="none"
+                    stroke="var(--accent)" strokeWidth="4" strokeLinecap="round"
+                    strokeDasharray={2 * Math.PI * 28}
+                    strokeDashoffset={state.retryAfterSeconds ? 2 * Math.PI * 28 * (1 - countdown / state.retryAfterSeconds) : 0}
+                    transform="rotate(-90 32 32)"
+                    style={{ transition: 'stroke-dashoffset 1s linear' }}
+                  />
+                </svg>
+                <span className="countdown-num">{countdown}s</span>
+              </div>
+              <p className="countdown-text">Rate limited — you can retry in {countdown}s</p>
+            </div>
+          )}
+          {state.rateLimited && state.retryAfterSeconds !== null && countdown === null && (
+            <p className="countdown-text ready">You can retry now.</p>
+          )}
           <div className="actions">
-            {state.dataUrl && <button className="scan-btn" onClick={() => {
-              const url = state.dataUrl!
-              setState({ step: 'loading', dataUrl: url })
-              scanLabel(url).then((result) => {
-                const updated = saveToHistory(result)
-                setHistory(updated)
-                setState({ step: 'result', dataUrl: url, result })
-              }).catch((err) => {
-                setState({ step: 'error', dataUrl: url, error: err instanceof Error ? err.message : 'Unknown error' })
-              })
-            }}>Retry</button>}
+            {state.dataUrl && (
+              <button
+                className="scan-btn"
+                disabled={countdown !== null && countdown > 0}
+                onClick={() => runScan(state.dataUrl!)}
+              >
+                {countdown !== null && countdown > 0 ? `Retry in ${countdown}s` : 'Retry'}
+              </button>
+            )}
             <button className="reset-btn" onClick={handleReset}>Start Over</button>
           </div>
         </div>
