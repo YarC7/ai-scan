@@ -75,7 +75,7 @@ Missing category → null (or [] for topping).`,
         },
       ],
       temperature: 0.2,
-      max_tokens: 2048,
+      max_tokens: 500,
     }),
   })
 
