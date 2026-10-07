@@ -84,8 +84,13 @@ export default function App() {
 
   return (
     <div className="app">
-      <h1>AI Scan</h1>
-      <p className="subtitle">Scan a boba tea order label</p>
+      <div className="brand">
+        <img src="/icon.png" alt="TeaZenTea" className="brand-icon" />
+        <div className="brand-text">
+          <h1>AI Scan</h1>
+          <p className="subtitle">Scan a boba tea order label</p>
+        </div>
+      </div>
 
       <input
         ref={inputRef}
@@ -127,7 +132,11 @@ export default function App() {
       {state.step === 'loading' && (
         <div className="preview">
           <img src={state.dataUrl} alt="Captured label" />
-          <div className="spinner" />
+          <div className="skel-stack" aria-hidden="true">
+            <div className="skel skel-title" />
+            <div className="skel skel-line" />
+            <div className="skel skel-line short" />
+          </div>
           <p className="loading-text">Scanning...</p>
         </div>
       )}
@@ -190,9 +199,9 @@ export default function App() {
               {showHistory ? '▼' : '▶'} History ({history.length})
             </button>
             <div className="export-btns">
-              <button className="export-btn csv" onClick={() => exportCSV(history)}>📊 Excel</button>
-              <button className="export-btn pdf" onClick={() => exportPDF(history)}>📄 PDF</button>
-              <button className="export-btn clear" onClick={handleClearHistory}>🗑 Clear</button>
+              <button className="export-btn csv" onClick={() => exportCSV(history)}>Excel</button>
+              <button className="export-btn pdf" onClick={() => exportPDF(history)}>PDF</button>
+              <button className="export-btn clear" onClick={handleClearHistory}>Clear</button>
             </div>
           </div>
 
@@ -234,6 +243,7 @@ function ResultCard({ result, showRaw, onToggleRaw }: { result: OrderLabel; show
         {result.modifiers?.tea_flavor && <ModRow label="Flavor" value={result.modifiers.tea_flavor} />}
       </div>
       {result.unrecognized_text?.length > 0 && <p className="unrecognized">Unrecognized: {result.unrecognized_text.join(', ')}</p>}
+      <RecipeCard recipe={result.recipe} />
       <button className="raw-toggle" onClick={onToggleRaw}>{showRaw ? 'Hide' : 'Show'} Raw JSON</button>
       {showRaw && <pre className="raw-json">{JSON.stringify(result, null, 2)}</pre>}
     </div>
@@ -245,6 +255,32 @@ function ModRow({ label, value }: { label: string; value: string }) {
     <div className="mod-row">
       <span className="mod-label">{label}</span>
       <span className="mod-value">{value}</span>
+    </div>
+  )
+}
+
+function RecipeCard({ recipe }: { recipe: OrderLabel['recipe'] }) {
+  if (!recipe) return null
+  return (
+    <div className="recipe">
+      <div className="recipe-header">
+        <h3>Recipe</h3>
+        <span className="recipe-sweet">{recipe.sweet}</span>
+      </div>
+      {recipe.note && <p className="recipe-note">{recipe.note}</p>}
+      <ul className="recipe-ingredients">
+        {recipe.ingredients.map((ing, i) => (
+          <li key={i}>
+            <span className="ing-label">{ing.label}</span>
+            <span className="ing-value">{ing.value}</span>
+          </li>
+        ))}
+      </ul>
+      <ol className="recipe-steps">
+        {recipe.steps.map((step, i) => (
+          <li key={i}>{step}</li>
+        ))}
+      </ol>
     </div>
   )
 }

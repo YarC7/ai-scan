@@ -17,4 +17,5 @@ export interface OrderLabel {
   drink_name: string
   modifiers: Modifiers
   unrecognized_text: string[]
+  recipe?: import('./recipes').Recipe | null
 }

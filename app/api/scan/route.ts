@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { validateAndCorrectLabel, type ExtractedLabel } from '@/lib/validateLabel'
+import { findRecipe } from '@/lib/recipes'
 
 export async function POST(request: Request) {
   const apiKey = process.env.GROQ_API_KEY
@@ -117,6 +118,7 @@ Missing category → null (or [] for topping).`,
 
     return NextResponse.json({
       ...label,
+      recipe: findRecipe(label.drink_name, label.modifiers.sweet),
       _validation: { corrections, warnings },
     })
   } catch {
