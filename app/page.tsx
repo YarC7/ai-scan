@@ -243,7 +243,9 @@ function ResultCard({ result, showRaw, onToggleRaw }: { result: OrderLabel; show
         {result.modifiers?.tea_flavor && <ModRow label="Flavor" value={result.modifiers.tea_flavor} />}
       </div>
       {result.unrecognized_text?.length > 0 && <p className="unrecognized">Unrecognized: {result.unrecognized_text.join(', ')}</p>}
-      <RecipeCard recipe={result.recipe} />
+      {result.recipe
+        ? <RecipeCard recipe={result.recipe} />
+        : <p className="no-recipe">No recipe available for “{result.drink_name}” yet.</p>}
       <button className="raw-toggle" onClick={onToggleRaw}>{showRaw ? 'Hide' : 'Show'} Raw JSON</button>
       {showRaw && <pre className="raw-json">{JSON.stringify(result, null, 2)}</pre>}
     </div>

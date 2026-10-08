@@ -374,6 +374,15 @@ code {
   transform: translateY(4px);
 }
 
+.no-recipe {
+  margin: 16px 0 0;
+  padding: 12px 14px;
+  border: 1px dashed var(--accent-border);
+  border-radius: 12px;
+  background: var(--accent-bg);
+  font-size: 14px;
+  color: var(--text);
+}
 .raw-toggle {
   margin-top: 12px;
   padding: 6px 12px;
