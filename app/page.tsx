@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
+import { Camera, Eye, EyeOff } from 'lucide-react'
 import { RateLimitError, scanLabel } from '@/lib/api'
 import type { OrderLabel } from '@/lib/types'
 import { loadHistory, saveToHistory, clearHistory, exportCSV, exportPDF } from '@/lib/export'
@@ -10,6 +11,10 @@ type State =
   | { step: 'loading'; dataUrl: string }
   | { step: 'result'; dataUrl: string; result: OrderLabel }
   | { step: 'error'; dataUrl: string | null; error: string; rateLimited: boolean; retryAfterSeconds: number | null }
+
+const EASE = 'ease-[cubic-bezier(0.16,1,0.3,1)]'
+const CARD = 'w-full max-w-[400px]'
+const BTN = `inline-flex min-h-[52px] flex-1 items-center justify-center gap-2 rounded-2xl text-[17px] font-semibold transition-transform duration-300 ${EASE} active:scale-[0.98]`
 
 export default function App() {
   const [state, setState] = useState<State>({ step: 'idle' })
@@ -33,6 +38,7 @@ export default function App() {
   }, [countdown])
 
   const [showHistory, setShowHistory] = useState(false)
+  const [expanded, setExpanded] = useState<number | null>(null)
   const inputRef = useRef<HTMLInputElement>(null)
 
   function runScan(dataUrl: string) {
@@ -81,12 +87,12 @@ export default function App() {
   }
 
   return (
-    <div className="app">
-      <div className="brand">
-        <img src="/icon.png" alt="TeaZenTea" className="brand-icon" />
-        <div className="brand-text">
-          <h1>AI Scan</h1>
-          <p className="subtitle">Scan a boba tea order label</p>
+    <div className="mx-auto flex w-full max-w-[480px] flex-1 flex-col items-center gap-4 px-4 pt-7 pb-[calc(28px+env(safe-area-inset-bottom))]">
+      <div className="flex w-full max-w-[400px] items-center gap-3 text-left">
+        <img src="/icon.png" alt="TeaZenTea" className="size-11 flex-none rounded-full object-cover shadow-[0_8px_20px_-8px_rgba(8,6,13,0.4)]" />
+        <div>
+          <h1 className="text-2xl leading-tight font-semibold tracking-tight text-(--text-h)">AI Scan</h1>
+          <p className="mt-0.5 text-sm text-(--text)">Scan a boba tea order label</p>
         </div>
       </div>
 
@@ -96,67 +102,56 @@ export default function App() {
         accept="image/*"
         capture="environment"
         onChange={handleFileChange}
-        className="file-input"
+        className="hidden"
         id="camera"
       />
       <input
         type="file"
         accept="image/*"
         onChange={handleFileChange}
-        className="file-input"
+        className="hidden"
         id="upload"
       />
 
       {state.step === 'idle' && (
-        <div className="actions">
-          <label htmlFor="camera" className="scan-btn">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
-              <circle cx="12" cy="13" r="4"/>
-            </svg>
+        <div className={`mt-3 flex ${CARD} gap-3`}>
+          <label htmlFor="camera" className={`${BTN} cursor-pointer bg-(--accent-soft) text-(--accent-ink)`}>
+            <Camera size={24} />
             Scan
           </label>
-          {/* <label htmlFor="upload" className="scan-btn">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-              <polyline points="17 8 12 3 7 8"/>
-              <line x1="12" y1="3" x2="12" y2="15"/>
-            </svg>
-            Upload Image
-          </label> */}
         </div>
       )}
 
       {state.step === 'loading' && (
-        <div className="preview">
-          <img src={state.dataUrl} alt="Captured label" />
-          <div className="skel-stack" aria-hidden="true">
-            <div className="skel skel-title" />
-            <div className="skel skel-line" />
-            <div className="skel skel-line short" />
+        <div className={`flex ${CARD} flex-col items-center gap-4`}>
+          <img src={state.dataUrl} alt="Captured label" className="aspect-[4/3] w-full rounded-[20px] border border-(--border) object-cover" />
+          <div className="flex w-full flex-col gap-2.5" aria-hidden="true">
+            <div className="skel h-[26px] w-[70%]" />
+            <div className="skel h-[14px]" />
+            <div className="skel h-[14px] w-[45%]" />
           </div>
-          <p className="loading-text">Scanning...</p>
+          <p className="text-base text-(--text)">Scanning...</p>
         </div>
       )}
 
       {state.step === 'result' && (
-        <div className="result">
-          <div className="result-img">
-            <img src={state.dataUrl} alt="Captured label" />
+        <div className={`flex ${CARD} flex-col items-center gap-4`}>
+          <div className="w-full">
+            <img src={state.dataUrl} alt="Captured label" className="aspect-[4/3] w-full rounded-[20px] border border-(--border) object-cover" />
           </div>
           <ResultCard result={state.result} />
-          <button className="scan-btn" onClick={handleReset}>Scan Another</button>
+          <button className={`${BTN} w-full cursor-pointer bg-(--accent-soft) text-(--accent-ink)`} onClick={handleReset}>Scan Another</button>
         </div>
       )}
 
       {state.step === 'error' && (
-        <div className="error-state">
-          {state.dataUrl && <img src={state.dataUrl} alt="Captured label" className="error-img" />}
-          <p className="error-msg">{state.error}</p>
+        <div className={`flex ${CARD} flex-col items-center gap-3`}>
+          {state.dataUrl && <img src={state.dataUrl} alt="Captured label" className="aspect-[4/3] w-full rounded-[20px] border border-(--border) object-cover opacity-60" />}
+          <p className="text-center text-[15px] text-red-600">{state.error}</p>
           {state.rateLimited && countdown !== null && (
-            <div className="rate-limit-notice">
-              <div className="countdown-ring">
-                <svg width="64" height="64" viewBox="0 0 64 64">
+            <div className="flex flex-col items-center gap-2.5">
+              <div className="relative size-16">
+                <svg width="64" height="64" viewBox="0 0 64 64" className="block">
                   <circle cx="32" cy="32" r="28" fill="none" stroke="var(--border)" strokeWidth="4" />
                   <circle
                     cx="32" cy="32" r="28" fill="none"
@@ -167,54 +162,88 @@ export default function App() {
                     style={{ transition: 'stroke-dashoffset 1s linear' }}
                   />
                 </svg>
-                <span className="countdown-num">{countdown}s</span>
+                <span className="absolute inset-0 flex items-center justify-center font-(--mono) text-base font-bold text-(--text-h)">{countdown}s</span>
               </div>
-              <p className="countdown-text">Rate limited — you can retry in {countdown}s</p>
+              <p className="text-center text-sm text-(--text)">Rate limited — you can retry in {countdown}s</p>
             </div>
           )}
           {state.rateLimited && state.retryAfterSeconds !== null && countdown === null && (
-            <p className="countdown-text ready">You can retry now.</p>
+            <p className="text-center text-sm font-semibold text-green-600">You can retry now.</p>
           )}
-          <div className="actions">
+          <div className={`mt-3 flex ${CARD} gap-3`}>
             {state.dataUrl && (
               <button
-                className="scan-btn"
+                className={`${BTN} cursor-pointer bg-(--accent-soft) text-(--accent-ink) disabled:cursor-not-allowed disabled:opacity-45 disabled:active:scale-none`}
                 disabled={countdown !== null && countdown > 0}
                 onClick={() => runScan(state.dataUrl!)}
               >
                 {countdown !== null && countdown > 0 ? `Retry in ${countdown}s` : 'Retry'}
               </button>
             )}
-            <button className="reset-btn" onClick={handleReset}>Start Over</button>
+            <button className={`${BTN} cursor-pointer border-[1.5px] border-(--border) bg-transparent text-(--text-h)`} onClick={handleReset}>Start Over</button>
           </div>
         </div>
       )}
 
       {mounted && history.length > 0 && (
-        <div className="history-section">
-          <div className="history-header">
-            <button className="history-toggle" onClick={() => setShowHistory(!showHistory)}>
+        <div className="mt-6 w-full max-w-[500px] border-t border-(--border) pt-4">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <button className="cursor-pointer bg-transparent py-1 text-base font-semibold text-(--text-h)" onClick={() => setShowHistory(!showHistory)}>
               {showHistory ? '▼' : '▶'} History ({history.length})
             </button>
-            <div className="export-btns">
-              <button className="export-btn csv" onClick={() => exportCSV(history)}>Excel</button>
-              <button className="export-btn pdf" onClick={() => exportPDF(history)}>PDF</button>
-              <button className="export-btn clear" onClick={handleClearHistory}>Clear</button>
+            <div className="flex gap-1.5">
+              <button className="min-h-10 cursor-pointer rounded-[10px] border border-(--border) bg-(--bg) px-3 py-1.5 text-[13px] font-semibold text-(--text-h) transition active:scale-[0.97]" onClick={() => exportCSV(history)}>Excel</button>
+              <button className="min-h-10 cursor-pointer rounded-[10px] border border-(--border) bg-(--bg) px-3 py-1.5 text-[13px] font-semibold text-(--text-h) transition active:scale-[0.97]" onClick={() => exportPDF(history)}>PDF</button>
+              <button className="min-h-10 cursor-pointer rounded-[10px] border border-red-300 bg-(--bg) px-3 py-1.5 text-[13px] font-semibold text-red-600 transition active:scale-[0.97]" onClick={handleClearHistory}>Clear</button>
             </div>
           </div>
 
           {showHistory && (
-            <div className="history-list">
-              {history.map((item, i) => (
-                <div key={i} className="history-item">
-                  <span className="history-num">#{i + 1}</span>
-                  <div className="history-info">
-                    <span className="history-drink">{item.drink_name}</span>
-                    {item.customer_name && <span className="history-customer">{item.customer_name}</span>}
-                    {item.order_id && <span className="history-order">{item.order_id}</span>}
+            <div className="mt-3 flex flex-col gap-2">
+              {history.map((item, i) => {
+                const open = expanded === i
+                return (
+                  <div
+                    key={i}
+                    className={`grid cursor-pointer grid-cols-[auto_1fr_auto] items-start gap-3 rounded-[14px] border bg-(--bg) py-3 pr-2.5 pl-3.5 text-sm shadow-[0_10px_24px_-20px_rgba(8,6,13,0.35)] transition-transform duration-300 ${EASE} active:scale-[0.99] ${open ? 'border-(--accent-border)' : 'border-(--border)'}`}
+                    onClick={() => setExpanded(open ? null : i)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setExpanded(open ? null : i) } }}
+                  >
+                    <span className="mt-px font-(--mono) text-xs font-bold whitespace-nowrap rounded-full border border-(--accent-border) bg-(--accent-bg) px-2 py-[3px] text-(--accent)">#{i + 1}</span>
+                    <div className="flex min-w-0 flex-1 flex-col gap-0.5">
+                      <span className="text-[15px] font-semibold tracking-tight text-(--text-h)">{item.drink_name}</span>
+                      <span className="truncate text-[13px] text-(--text)">
+                        {[item.customer_name, item.order_id].filter(Boolean).join(' · ')}
+                      </span>
+                      {open && (
+                        <div className="mt-2.5 flex flex-col gap-2.5 border-t border-(--border) pt-2.5" onClick={(e) => e.stopPropagation()}>
+                          <div className="flex flex-col gap-2">
+                            {item.modifiers?.topping?.length > 0 && (
+                              <ModRow label="Topping" value={item.modifiers.topping.map(t => t.quantity > 1 ? `${t.quantity}x ${t.name}` : t.name).join(', ')} />
+                            )}
+                            {item.modifiers?.sweet && <ModRow label="Sweet" value={item.modifiers.sweet} />}
+                            {item.modifiers?.ice && <ModRow label="Ice" value={item.modifiers.ice} />}
+                            {item.modifiers?.tea_flavor && <ModRow label="Flavor" value={item.modifiers.tea_flavor} />}
+                          </div>
+                          {item.recipe
+                            ? <RecipeCard recipe={item.recipe} />
+                            : <p className="mt-4 rounded-xl border border-dashed border-(--accent-border) bg-(--accent-bg) p-3 text-sm text-(--text)">No recipe available for “{item.drink_name}” yet.</p>}
+                        </div>
+                      )}
+                    </div>
+                    <button
+                      className={`inline-flex size-10 flex-none cursor-pointer items-center justify-center rounded-xl border border-transparent bg-transparent text-(--text) transition active:scale-[0.94] ${open ? 'border-(--accent-border) bg-(--accent-bg) text-(--accent)' : ''}`}
+                      aria-label={open ? 'Hide details' : 'Show details'}
+                      aria-expanded={open}
+                      onClick={(e) => { e.stopPropagation(); setExpanded(open ? null : i) }}
+                    >
+                      {open ? <EyeOff size={20} /> : <Eye size={20} />}
+                    </button>
                   </div>
-                </div>
-              ))}
+                )
+              })}
             </div>
           )}
         </div>
@@ -225,14 +254,14 @@ export default function App() {
 
 function ResultCard({ result }: { result: OrderLabel }) {
   return (
-    <div className="result-card">
-      <div className="result-header">
-        {result.order_id && <span className="order-id">{result.order_id}</span>}
-        {result.page && <span className="page">{result.page}</span>}
+    <div className="w-full rounded-[20px] border border-(--border) bg-(--code-bg) p-5 text-left shadow-[0_20px_40px_-24px_rgba(8,6,13,0.25)]">
+      <div className="mb-2 flex items-center gap-3 text-sm text-(--text)">
+        {result.order_id && <span>{result.order_id}</span>}
+        {result.page && <span>{result.page}</span>}
       </div>
-      {result.customer_name && <p className="customer">{result.customer_name}</p>}
-      <h2 className="drink">{result.drink_name}</h2>
-      <div className="modifiers">
+      {result.customer_name && <p className="mb-1 text-base text-(--text)">{result.customer_name}</p>}
+      <h2 className="mb-4 text-[22px] leading-[1.18] font-bold text-(--text-h)">{result.drink_name}</h2>
+      <div className="flex flex-col gap-2">
         {result.modifiers?.topping?.length > 0 && (
           <ModRow label="Topping" value={result.modifiers.topping.map(t => t.quantity > 1 ? `${t.quantity}x ${t.name}` : t.name).join(', ')} />
         )}
@@ -240,37 +269,37 @@ function ResultCard({ result }: { result: OrderLabel }) {
         {result.modifiers?.ice && <ModRow label="Ice" value={result.modifiers.ice} />}
         {result.modifiers?.tea_flavor && <ModRow label="Flavor" value={result.modifiers.tea_flavor} />}
       </div>
-      {result.unrecognized_text?.length > 0 && <p className="unrecognized">Unrecognized: {result.unrecognized_text.join(', ')}</p>}
+      {result.unrecognized_text?.length > 0 && <p className="mt-2 text-[13px] text-(--text) opacity-70">Unrecognized: {result.unrecognized_text.join(', ')}</p>}
       {result.recipe
         ? <RecipeCard recipe={result.recipe} />
-        : <p className="no-recipe">No recipe available for “{result.drink_name}” yet.</p>}
+        : <p className="mt-4 rounded-xl border border-dashed border-(--accent-border) bg-(--accent-bg) p-3 text-sm text-(--text)">No recipe available for “{result.drink_name}” yet.</p>}
     </div>
   )
 }
 
 function ModRow({ label, value }: { label: string; value: string }) {
   return (
-    <div className="mod-row">
-      <span className="mod-label">{label}</span>
-      <span className="mod-value">{value}</span>
+    <div className="flex gap-3 text-[15px]">
+      <span className="min-w-[60px] font-semibold text-(--text-h)">{label}</span>
+      <span className="text-(--text)">{value}</span>
     </div>
   )
 }
 
-function RecipeCard({ recipe }: { recipe: OrderLabel['recipe'] }) {
+function RecipeCard({ recipe }: { recipe: NonNullable<OrderLabel['recipe']> }) {
   if (!recipe) return null
   return (
-    <div className="recipe">
-      <div className="recipe-header">
-        <h3>Recipe</h3>
-        <span className="recipe-sweet">{recipe.sweet}</span>
+    <div className="mt-4 border-t border-(--border) pt-4">
+      <div className="mb-2 flex items-center gap-2.5">
+        <h3 className="text-base font-bold text-(--text-h)">Recipe</h3>
+        <span className="rounded-full border border-(--border) px-2 py-0.5 text-xs font-semibold text-(--text)">{recipe.sweet}</span>
       </div>
-      {recipe.note && <p className="recipe-note">{recipe.note}</p>}
-      <ul className="recipe-ingredients">
+      {recipe.note && <p className="mb-2.5 text-[13px] text-(--text) italic">{recipe.note}</p>}
+      <ul className="m-0 mb-3 flex list-none flex-col gap-1.5 p-0">
         {recipe.ingredients.map((ing, i) => (
-          <li key={i}>
-            <span className="ing-label">{ing.label}</span>
-            <span className="ing-value">{ing.value}</span>
+          <li key={i} className="flex justify-between gap-3 text-sm">
+            <span className="font-medium text-(--text-h)">{ing.label}</span>
+            <span className="font-semibold text-(--text-h)">{ing.value}</span>
           </li>
         ))}
       </ul>
