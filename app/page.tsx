@@ -13,7 +13,6 @@ type State =
 
 export default function App() {
   const [state, setState] = useState<State>({ step: 'idle' })
-  const [showRaw, setShowRaw] = useState(false)
   const [history, setHistory] = useState<OrderLabel[]>([])
   const [mounted, setMounted] = useState(false)
   const [countdown, setCountdown] = useState<number | null>(null)
@@ -68,7 +67,6 @@ export default function App() {
 
   function handleReset() {
     setState({ step: 'idle' })
-    setShowRaw(false)
     setCountdown(null)
     if (inputRef.current) {
       inputRef.current.value = ''
@@ -146,7 +144,7 @@ export default function App() {
           <div className="result-img">
             <img src={state.dataUrl} alt="Captured label" />
           </div>
-          <ResultCard result={state.result} showRaw={showRaw} onToggleRaw={() => setShowRaw(!showRaw)} />
+          <ResultCard result={state.result} />
           <button className="scan-btn" onClick={handleReset}>Scan Another</button>
         </div>
       )}
@@ -225,7 +223,7 @@ export default function App() {
   )
 }
 
-function ResultCard({ result, showRaw, onToggleRaw }: { result: OrderLabel; showRaw: boolean; onToggleRaw: () => void }) {
+function ResultCard({ result }: { result: OrderLabel }) {
   return (
     <div className="result-card">
       <div className="result-header">
@@ -246,8 +244,6 @@ function ResultCard({ result, showRaw, onToggleRaw }: { result: OrderLabel; show
       {result.recipe
         ? <RecipeCard recipe={result.recipe} />
         : <p className="no-recipe">No recipe available for “{result.drink_name}” yet.</p>}
-      <button className="raw-toggle" onClick={onToggleRaw}>{showRaw ? 'Hide' : 'Show'} Raw JSON</button>
-      {showRaw && <pre className="raw-json">{JSON.stringify(result, null, 2)}</pre>}
     </div>
   )
 }
