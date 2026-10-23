@@ -1,0 +1,42 @@
+default:
+  image: docker:latest
+  tags:
+    - docker
+
+stages:
+  - build
+  - migrate
+  - deploy
+
+variables:
+  DOCKER_HOST: unix:///var/run/docker.sock
+  DOCKER_BUILDKIT: 1
+
+workflow:
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "develop"'
+
+build:
+  stage: build
+  before_script:
+    - cp "$ENV_FILE" .env
+  script:
+    - docker compose build
+
+migrate:
+  stage: migrate
+  before_script:
+    - cp "$ENV_FILE" .env
+  script:
+    - docker compose up -d db
+    - docker compose exec -T db sh -c 'until pg_isready -U "$POSTGRES_USER" -d "$POSTGRES_DB"; do sleep 1; done'
+    - docker compose run --rm --no-deps app sh -c "node scripts/migrate.mjs && node scripts/seed-owner.mjs"
+
+deploy:
+  stage: deploy
+  before_script:
+    - cp "$ENV_FILE" .env
+  script:
+    - docker compose up -d --remove-orphans
+  after_script:
+    - docker image prune -f

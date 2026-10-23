@@ -12,6 +12,7 @@
   --accent-bg: rgba(92, 143, 62, 0.12);
   --accent-border: rgba(92, 143, 62, 0.45);
   --accent-soft: #cdebb3;
+  --accent-soft-hover: #bfe3a0;
   --accent-ink: #2c4a14;
   --mono: ui-monospace, Consolas, monospace;
 
@@ -116,6 +117,22 @@ button:focus-visible, label:focus-visible {
   align-items: center;
   justify-content: center;
   transform: translateY(4px);
+}
+
+@keyframes menu-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.menu-in {
+  transform-origin: top right;
+  animation: menu-in 0.16s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @media (max-width: 1024px) {

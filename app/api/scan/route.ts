@@ -1,17 +1,70 @@
 import { NextResponse } from 'next/server'
+import { headers } from 'next/headers'
+import { auth } from '@/lib/auth'
+import { isIpAllowed } from '@/lib/allowlist'
+import { getClientIp, IP_NOT_ALLOWED_CODE, isLoopbackIp } from '@/lib/ip'
 import { validateAndCorrectLabel, type ExtractedLabel } from '@/lib/validateLabel'
 import { findRecipe } from '@/lib/recipes'
 
+const MAX_DATA_URL_LENGTH = 4_000_000
+
 export async function POST(request: Request) {
+  const session = await auth.api.getSession({ headers: await headers() })
+
+  if (!session) {
+    return NextResponse.json({ error: 'You need to sign in to use this feature.' }, { status: 401 })
+  }
+
+  if ((session.user as { banned?: boolean | null }).banned) {
+    return NextResponse.json({ error: 'Your account has been disabled.' }, { status: 403 })
+  }
+
+  const clientIp = getClientIp(request.headers)
+  const role = (session.user as { role?: string | null }).role
+  const allowed =
+    role === 'owner' ||
+    (clientIp !== null && isLoopbackIp(clientIp)) ||
+    (clientIp ? await isIpAllowed(clientIp) : false)
+
+  if (!allowed) {
+    return NextResponse.json(
+      {
+        error: 'This device is not connected to the store WiFi. Please connect to WiFi and try again.',
+        code: IP_NOT_ALLOWED_CODE,
+      },
+      { status: 403 },
+    )
+  }
+
   const apiKey = process.env.GROQ_API_KEY
   if (!apiKey) {
     return NextResponse.json({ error: 'Missing GROQ_API_KEY in .env.local' }, { status: 500 })
   }
 
-  const { dataUrl } = await request.json()
+  const contentLength = Number(request.headers.get('content-length') ?? 0)
+  if (contentLength > MAX_DATA_URL_LENGTH) {
+    return NextResponse.json({ error: 'Image is too large. Please retake a smaller photo.' }, { status: 413 })
+  }
 
-  if (!dataUrl) {
+  let body: unknown
+  try {
+    body = await request.json()
+  } catch {
+    return NextResponse.json({ error: 'Invalid request data.' }, { status: 400 })
+  }
+
+  const dataUrl = (body as { dataUrl?: unknown } | null)?.dataUrl
+
+  if (typeof dataUrl !== 'string' || !dataUrl) {
     return NextResponse.json({ error: 'Missing dataUrl' }, { status: 400 })
+  }
+
+  if (!dataUrl.startsWith('data:image/')) {
+    return NextResponse.json({ error: 'dataUrl must be an image (data:image/...).' }, { status: 400 })
+  }
+
+  if (dataUrl.length > MAX_DATA_URL_LENGTH) {
+    return NextResponse.json({ error: 'Image is too large. Please retake a smaller photo.' }, { status: 413 })
   }
 
   const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {

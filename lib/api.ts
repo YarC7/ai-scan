@@ -10,6 +10,20 @@ export class RateLimitError extends Error {
   }
 }
 
+export class UnauthorizedError extends Error {
+  constructor(message: string) {
+    super(message)
+    this.name = 'UnauthorizedError'
+  }
+}
+
+export class NetworkRestrictedError extends Error {
+  constructor(message: string) {
+    super(message)
+    this.name = 'NetworkRestrictedError'
+  }
+}
+
 export async function scanLabel(dataUrl: string): Promise<OrderLabel> {
   const res = await fetch('/api/scan', {
     method: 'POST',
@@ -19,6 +33,14 @@ export async function scanLabel(dataUrl: string): Promise<OrderLabel> {
 
   if (!res.ok) {
     const data = await res.json().catch(() => null)
+    if (res.status === 403 && data?.code === 'IP_NOT_ALLOWED') {
+      throw new NetworkRestrictedError(
+        data?.error || 'This device is not connected to the store WiFi.',
+      )
+    }
+    if (res.status === 401 || res.status === 403) {
+      throw new UnauthorizedError(data?.error || 'You need to sign in to continue.')
+    }
     if (res.status === 429) {
       const raw = data?.retryAfterSeconds
       const seconds = typeof raw === 'number' && Number.isFinite(raw) ? raw : null

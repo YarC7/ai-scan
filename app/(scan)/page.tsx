@@ -1,10 +1,12 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import { Camera, Eye, EyeOff } from 'lucide-react'
-import { RateLimitError, scanLabel } from '@/lib/api'
+import { RateLimitError, UnauthorizedError, scanLabel } from '@/lib/api'
 import type { OrderLabel } from '@/lib/types'
 import { loadHistory, saveToHistory, clearHistory, exportCSV, exportPDF } from '@/lib/export'
+import { UserMenu } from '@/components/user-menu'
 
 type State =
   | { step: 'idle' }
@@ -17,22 +19,22 @@ const CARD = 'w-full max-w-[400px]'
 const BTN = `inline-flex min-h-[52px] flex-1 items-center justify-center gap-2 rounded-2xl text-[17px] font-semibold transition-transform duration-300 ${EASE} active:scale-[0.98]`
 
 export default function App() {
+  const router = useRouter()
   const [state, setState] = useState<State>({ step: 'idle' })
   const [history, setHistory] = useState<OrderLabel[]>([])
   const [mounted, setMounted] = useState(false)
   const [countdown, setCountdown] = useState<number | null>(null)
 
   useEffect(() => {
-    setHistory(loadHistory())
-    setMounted(true)
+    const id = setTimeout(() => {
+      setHistory(loadHistory())
+      setMounted(true)
+    }, 0)
+    return () => clearTimeout(id)
   }, [])
 
   useEffect(() => {
-    if (countdown === null) return
-    if (countdown <= 0) {
-      setCountdown(null)
-      return
-    }
+    if (countdown === null || countdown <= 0) return
     const t = setTimeout(() => setCountdown((c) => (c === null ? null : c - 1)), 1000)
     return () => clearTimeout(t)
   }, [countdown])
@@ -49,6 +51,10 @@ export default function App() {
       setHistory(updated)
       setState({ step: 'result', dataUrl, result })
     }).catch((err) => {
+      if (err instanceof UnauthorizedError) {
+        router.replace('/login')
+        return
+      }
       if (err instanceof RateLimitError) {
         setCountdown(err.retryAfterSeconds)
         setState({
@@ -94,6 +100,7 @@ export default function App() {
           <h1 className="text-2xl leading-tight font-semibold tracking-tight text-(--text-h)">AI Scan</h1>
           <p className="mt-0.5 text-sm text-(--text)">Scan a boba tea order label</p>
         </div>
+        <UserMenu />
       </div>
 
       <input
@@ -148,7 +155,7 @@ export default function App() {
         <div className={`flex ${CARD} flex-col items-center gap-3`}>
           {state.dataUrl && <img src={state.dataUrl} alt="Captured label" className="aspect-[4/3] w-full rounded-[20px] border border-(--border) object-cover opacity-60" />}
           <p className="text-center text-[15px] text-red-600">{state.error}</p>
-          {state.rateLimited && countdown !== null && (
+          {state.rateLimited && countdown !== null && countdown > 0 && (
             <div className="flex flex-col items-center gap-2.5">
               <div className="relative size-16">
                 <svg width="64" height="64" viewBox="0 0 64 64" className="block">
@@ -167,7 +174,7 @@ export default function App() {
               <p className="text-center text-sm text-(--text)">Rate limited — you can retry in {countdown}s</p>
             </div>
           )}
-          {state.rateLimited && state.retryAfterSeconds !== null && countdown === null && (
+          {state.rateLimited && state.retryAfterSeconds !== null && (countdown === null || countdown <= 0) && (
             <p className="text-center text-sm font-semibold text-green-600">You can retry now.</p>
           )}
           <div className={`mt-3 flex ${CARD} gap-3`}>
